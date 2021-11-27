@@ -8,3 +8,9 @@
   src: url("assets/fonts/Gilroy-Medium.ttf") format("truetype"),
     local("Gilroy-Medium");
 }
+
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url("assets/fonts/Gilroy-SemiBold.ttf") format("truetype"),
+    local("Gilroy-SemiBold");
+}

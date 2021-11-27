@@ -36,7 +36,7 @@ const HeaderComponent = () => {
       <PreHeader>
         <LocationContainer>
           <LocationIcon src={locationIcon} alt="location" />
-          <NormalText>{t("location")}</NormalText>
+          <NormalText>{t("header.location")}</NormalText>
         </LocationContainer>
         <ContactsContainer>
           <PhoneIcon src={phoneIcon} alt="phone" />
@@ -48,18 +48,18 @@ const HeaderComponent = () => {
         <Navigation>
           <LogoIcon src={logoDark} alt="logo" />
           <ActionText style={styles.acitionText}>
-            {t("navigation.services")}
+            {t("header.navigation.services")}
           </ActionText>
           <ActionText style={styles.acitionText}>
-            {t("navigation.about_clinic")}
+            {t("header.navigation.about_clinic")}
           </ActionText>
           <ActionText style={styles.acitionText}>
-            {t("navigation.doctors")}
+            {t("header.navigation.doctors")}
           </ActionText>
           <ActionText style={styles.acitionText}>
-            {t("navigation.prices")}
+            {t("header.navigation.prices")}
           </ActionText>
-          <ActionText>{t("navigation.contacts")}</ActionText>
+          <ActionText>{t("header.navigation.contacts")}</ActionText>
         </Navigation>
         <Social>
           <ViberIcon src={viberIcon} alt="viber" />
