@@ -14,3 +14,9 @@
   src: url("assets/fonts/Gilroy-SemiBold.ttf") format("truetype"),
     local("Gilroy-SemiBold");
 }
+
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("assets/fonts/Gilroy-Regular.ttf") format("truetype"),
+    local("Gilroy-Regular");
+}
