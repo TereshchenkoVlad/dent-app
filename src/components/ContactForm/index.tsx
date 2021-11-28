@@ -28,7 +28,7 @@ const ContactForm = () => {
     <Form>
       <Title style={styles.title}>Залишіть свої контакти</Title>
       <div style={styles.callBack}>
-        <CallBack />
+        <CallBack type="dark" />
       </div>
 
       <Input label="Ім’я" />

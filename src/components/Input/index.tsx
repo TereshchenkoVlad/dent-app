@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "styles/colors";
 
-import { NormalText } from "styles/text";
+import { MediumText } from "styles/text";
 
 interface Props {
   label: string;
@@ -11,7 +11,7 @@ interface Props {
 const InputComponent = ({ label }: Props) => {
   return (
     <Container>
-      <NormalText>{label}</NormalText>
+      <MediumText>{label}</MediumText>
       <Input />
     </Container>
   );

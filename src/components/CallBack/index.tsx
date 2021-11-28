@@ -4,12 +4,23 @@ import styled from "styled-components";
 import { SmallBold } from "styles/text";
 
 import telegramIcon from "assets/images/icons/telegram.svg";
+import telegramIconLight from "assets/images/icons/telegram_light.svg";
+import { theme } from "styles/colors";
 
-const CallBack = () => {
+interface Props {
+  type: "light" | "dark";
+}
+
+const CallBack = ({ type }: Props) => {
   return (
     <Container>
-      <TelegramIcon src={telegramIcon} alt="telegram" />
-      <SmallBold>Відповідаємо протягом 15 хвилин</SmallBold>
+      <TelegramIcon
+        src={type === "light" ? telegramIconLight : telegramIcon}
+        alt="telegram"
+      />
+      <SmallBold color={type === "light" ? theme.mainBlue : theme.mainWhite}>
+        Відповідаємо протягом 15 хвилин
+      </SmallBold>
     </Container>
   );
 };

@@ -4,6 +4,8 @@ import Header from "components/Header";
 import Services from "components/Services";
 import MainImage from "components/MainImage";
 import { AppConfig } from "config/applicationConfig";
+import AboutCompany from "./components/AboutCompany";
+import Dentists from "./components/Dentists";
 
 const Home = () => {
   return (
@@ -11,6 +13,8 @@ const Home = () => {
       <Header />
       <MainImage />
       <Services />
+      <AboutCompany />
+      <Dentists />
       <iframe
         width="100%"
         height="528"

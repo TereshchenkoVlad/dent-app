@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ActionText, NormalText } from "styles/text";
+import { MediumText } from "styles/text";
 
 import logoDark from "assets/images/logoDark.svg";
 import phoneIcon from "assets/images/icons/phone.svg";
@@ -23,6 +23,7 @@ import {
   ContactsContainer,
 } from "./styles";
 import { t } from "i18next";
+import { theme } from "styles/colors";
 
 const styles = {
   acitionText: {
@@ -36,30 +37,32 @@ const HeaderComponent = () => {
       <PreHeader>
         <LocationContainer>
           <LocationIcon src={locationIcon} alt="location" />
-          <NormalText>{t("header.location")}</NormalText>
+          <MediumText>{t("header.location")}</MediumText>
         </LocationContainer>
         <ContactsContainer>
           <PhoneIcon src={phoneIcon} alt="phone" />
-          <NormalText>(096) 020-52-00</NormalText>
+          <MediumText>(096) 020-52-00</MediumText>
         </ContactsContainer>
       </PreHeader>
 
       <Header>
         <Navigation>
           <LogoIcon src={logoDark} alt="logo" />
-          <ActionText style={styles.acitionText}>
+          <MediumText color={theme.black} fs={16} style={styles.acitionText}>
             {t("header.navigation.services")}
-          </ActionText>
-          <ActionText style={styles.acitionText}>
+          </MediumText>
+          <MediumText color={theme.black} fs={16} style={styles.acitionText}>
             {t("header.navigation.about_clinic")}
-          </ActionText>
-          <ActionText style={styles.acitionText}>
+          </MediumText>
+          <MediumText color={theme.black} fs={16} style={styles.acitionText}>
             {t("header.navigation.doctors")}
-          </ActionText>
-          <ActionText style={styles.acitionText}>
+          </MediumText>
+          <MediumText color={theme.black} fs={16} style={styles.acitionText}>
             {t("header.navigation.prices")}
-          </ActionText>
-          <ActionText>{t("header.navigation.contacts")}</ActionText>
+          </MediumText>
+          <MediumText color={theme.black} fs={16}>
+            {t("header.navigation.contacts")}
+          </MediumText>
         </Navigation>
         <Social>
           <ViberIcon src={viberIcon} alt="viber" />

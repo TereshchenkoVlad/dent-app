@@ -1,6 +1,6 @@
 import React from "react";
 
-import { NormalTitle, SmallText } from "styles/text";
+import { NormalTitle, RegularType2 } from "styles/text";
 import { theme } from "styles/colors";
 import styled from "styled-components";
 
@@ -31,7 +31,7 @@ const ServiceItem = ({ title, iconURL, imageURL, description }: Props) => {
         >
           {title}
         </NormalTitle>
-        <SmallText className="service_text">{description}</SmallText>
+        <RegularType2 className="service_text">{description}</RegularType2>
       </Item>
     </ItemWrapper>
   );
