@@ -6,6 +6,8 @@ import MainImage from "components/MainImage";
 import { AppConfig } from "config/applicationConfig";
 import AboutCompany from "./components/AboutCompany";
 import Dentists from "./components/Dentists";
+import Costs from "./components/Costs";
+import Footer from "components/Footer";
 
 const Home = () => {
   return (
@@ -15,6 +17,7 @@ const Home = () => {
       <Services />
       <AboutCompany />
       <Dentists />
+      <Costs />
       <iframe
         width="100%"
         height="528"
@@ -23,6 +26,7 @@ const Home = () => {
         style={{ border: 0 }}
         src={AppConfig.google_api}
       />
+      <Footer />
     </div>
   );
 };

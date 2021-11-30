@@ -32,11 +32,12 @@ import img10 from "assets/images/icons/services/kindsDent.svg";
 import icon11 from "assets/images/icons/services/plasma_therapy.svg";
 import img11 from "assets/images/icons/services/kindsDent.svg";
 
-interface SeviceType {
+export interface SeviceType {
   title: string;
   description: string;
   iconURL: string;
   imageURL: string;
+  cost: number;
 }
 
 export const SERVICES: SeviceType[] = [
@@ -46,6 +47,7 @@ export const SERVICES: SeviceType[] = [
       "В «Стоматології лікаря Ляшука» успішно лікують карієс та його ускладнення за допомогою сучасного обладнання.",
     iconURL: icon1,
     imageURL: img1,
+    cost: 900,
   },
   {
     title: "Протезування",
@@ -53,6 +55,7 @@ export const SERVICES: SeviceType[] = [
       "Виготовлення металокерамічних коронок, безметалевих коронок, керамічних вінірів, коронок на імплантаті, виготовлення протезів.",
     iconURL: icon2,
     imageURL: img2,
+    cost: 3500,
   },
   {
     title: "Ортодонтія",
@@ -60,6 +63,7 @@ export const SERVICES: SeviceType[] = [
       "Зняття відбитків, виготовлення діагностичних гіпсових моделей, пластинковий апарат з гвинтом, фіксація металевої брекет-системи.",
     iconURL: icon3,
     imageURL: img3,
+    cost: 4600,
   },
   {
     title: "Гігієна та відбілювання",
@@ -67,6 +71,7 @@ export const SERVICES: SeviceType[] = [
       "Професійна гігієна порожнини рота, комплексна (скейлінг, Air- flow), пародонтологічна чистка зубів, фото відбілювання зубів та ін.",
     iconURL: icon4,
     imageURL: img4,
+    cost: 2500,
   },
   {
     title: "Профілактика",
@@ -74,6 +79,7 @@ export const SERVICES: SeviceType[] = [
       "Вживання препаратів фтору, ремінералізуюча терапія, фторування зубів, дотримання гігієни порожнини рота та ін.",
     iconURL: icon5,
     imageURL: img5,
+    cost: 450,
   },
   {
     title: "Дитяча стоматологія",
@@ -81,6 +87,7 @@ export const SERVICES: SeviceType[] = [
       "Лікування карієсу молочних і постійних зубів, лікування кореневих каналів, дитяча реставрація зубів, виправлення прикусу та ін.",
     iconURL: icon6,
     imageURL: img6,
+    cost: 450,
   },
   {
     title: "Лазерна стоматологія",
@@ -88,6 +95,7 @@ export const SERVICES: SeviceType[] = [
       "Висічення капюшона при прорізуванні зубів мудрості, лікування хвороб пародонта, корекція вуздечок губ та язика та ін.",
     iconURL: icon7,
     imageURL: img7,
+    cost: 1000,
   },
   {
     title: "Хірургія",
@@ -95,6 +103,7 @@ export const SERVICES: SeviceType[] = [
       "Анестезія ін’єкційна, видалення зубів мудрості, розкриття періостального абсцесу та постановка дренажу, кюретаж лунки та ін.",
     iconURL: icon8,
     imageURL: img8,
+    cost: 800,
   },
   {
     title: "Естетична стоматологія",
@@ -102,6 +111,7 @@ export const SERVICES: SeviceType[] = [
       "Художня реставрація зубів фотополімером, керамічними вінірами та вкладками, естетична реставрація фронтальних зубів.",
     iconURL: icon9,
     imageURL: img9,
+    cost: 1500,
   },
   {
     title: "Лікування під мікроскопом",
@@ -109,6 +119,7 @@ export const SERVICES: SeviceType[] = [
       "Точне лікування кореневих каналів, ретельна герметизація каналу, видалення уламків стоматологічних інструментів та ін.",
     iconURL: icon10,
     imageURL: img10,
+    cost: 3000,
   },
   {
     title: "Плазмотерапія та парадонтологія",
@@ -116,5 +127,6 @@ export const SERVICES: SeviceType[] = [
       "Метод локальної стимуляції регенеративних процесів в тканинах пародонта шляхом ін’єкції збагаченої тромбоцитами плазми.",
     iconURL: icon11,
     imageURL: img11,
+    cost: 1500,
   },
 ];

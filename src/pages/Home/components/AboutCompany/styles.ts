@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  margin-bottom: 100px;
-`;
-
 export const Container = styled.div`
-  padding: 0 60px;
+  padding: 0 60px 100px 60px;
 `;
 
 export const Inner = styled.div`
@@ -17,6 +13,8 @@ export const Inner = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  max-width: 520px;
 `;
 
 export const ButtonsContainer = styled.div`
@@ -26,7 +24,6 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const TeamImage = styled.img`
-  width: 600px;
-  height: 722px;
-  margin-right: 60px;
+  width: 722px;
+  height: 600px;
 `;

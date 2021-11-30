@@ -50,7 +50,7 @@ export const DescriptionText = styled.p`
 
 export const SemiBoldText = styled.p`
   color: ${({ color }: TextProps) => (color ? color : theme.black)};
-  font-size: 20px;
+  font-size: ${({ fs }: TextProps) => (fs ? fs : 20)}px;
   font-family: Gilroy-SemiBold;
 `;
 

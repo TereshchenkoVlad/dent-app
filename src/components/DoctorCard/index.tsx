@@ -22,10 +22,7 @@ interface Props {
 const DoctorCard = ({ title, description, url }: Props) => {
   return (
     <Container>
-      <Image
-        src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"
-        alt="doctor"
-      />
+      <Image src="https://wallpaperaccess.com/full/391239.jpg" alt="doctor" />
       <Content>
         <SemiBoldText style={styles.title}>{title}</SemiBoldText>
         <MediumText style={styles.text} fs={16} color={theme.black}>
