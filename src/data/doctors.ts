@@ -27,4 +27,9 @@ export const DOCTORS: DoctorType[] = [
     description: "Лікар - стоматолог - ортодонт",
     url: "",
   },
+  {
+    name: "Ляшук Назарій Васильович",
+    description: "Лікар - стоматолог - хірург",
+    url: "",
+  },
 ];

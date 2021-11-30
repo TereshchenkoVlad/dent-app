@@ -68,17 +68,24 @@ const Dentists = () => {
             <br /> здоров’я ваших зубів
           </MediumText>
 
-          <ButtonContainer>
+          {/* <ButtonContainer>
             <div style={styles.button} onClick={previous}>
               <NextButton type="left" />
             </div>
             <div onClick={next}>
               <NextButton type="right" />
             </div>
-          </ButtonContainer>
+          </ButtonContainer> */}
         </ActionContainer>
 
-        <StyledSlider ref={(c) => (list = c)} {...settings}>
+        {/* <StyledSlider ref={(c) => (list = c)} {...settings}> */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+          }}
+        >
           {DOCTORS.map((doctor, i) => (
             <DoctorCard
               key={i.toString()}
@@ -87,7 +94,9 @@ const Dentists = () => {
               url=""
             />
           ))}
-        </StyledSlider>
+        </div>
+
+        {/* </StyledSlider> */}
       </Container>
     </Wrapper>
   );
