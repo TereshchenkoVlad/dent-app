@@ -1,8 +1,12 @@
 import React from "react";
+import { t } from "i18next";
 import styled from "styled-components";
+
+import { LinkType } from "config/i18n";
+
 import { theme } from "styles/colors";
 import { MediumText } from "styles/text";
-import { forth_point } from "./styles";
+import { forth_point, Link } from "./styles";
 
 const styles = {
   item: {
@@ -11,13 +15,18 @@ const styles = {
 };
 
 const DropMenu = () => {
+  const LINKS = t("header.links", { returnObjects: true }) as LinkType[];
+
   return (
     <Container>
-      <MediumText style={styles.item}>Послуги</MediumText>
-      <MediumText style={styles.item}>Про клініку</MediumText>
-      <MediumText style={styles.item}>Лікарі</MediumText>
-      <MediumText style={styles.item}>Ціни</MediumText>
-      <MediumText>Контакти</MediumText>
+      {LINKS.map((link, index) => {
+        const style = LINKS.length - 1 === index ? {} : styles.item;
+        return (
+          <Link href={`#` + link.id} key={link.id}>
+            <MediumText {...{ style }}>{link.name}</MediumText>
+          </Link>
+        );
+      })}
     </Container>
   );
 };
@@ -32,6 +41,7 @@ const Container = styled.div`
   padding: 20px;
   border-radius: 5px;
   background-color: ${theme.mainBlue};
+  z-index: 10;
 
   @media only screen and (max-width: ${forth_point}px) {
     top: 30px;

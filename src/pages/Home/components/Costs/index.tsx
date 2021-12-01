@@ -8,7 +8,7 @@ import { BigTitle, MediumText } from "styles/text";
 
 const Costs = () => {
   return (
-    <Container>
+    <Container id="prices">
       <TitleContainer>
         <BigTitle>Вартість послуг*</BigTitle>
         <Line />
@@ -26,7 +26,7 @@ const Costs = () => {
       <div>
         {SERVICES.map((item, index) => {
           const type = index % 2 ? "light" : "blue";
-          return <CostItem type={type} item={item} />;
+          return <CostItem key={item.title} type={type} item={item} />;
         })}
       </div>
     </Container>

@@ -1,13 +1,13 @@
-import React, { useRef } from "react";
-import Slider from "react-slick";
+import React from "react";
+// import Slider from "react-slick";
 
 import { theme } from "styles/colors";
-import NextButton from "components/NextButton";
+// import NextButton from "components/NextButton";
 import { BigTitle, MediumText } from "styles/text";
 
 import {
   ActionContainer,
-  ButtonContainer,
+  // ButtonContainer,
   Container,
   Line,
   TittleContainer,
@@ -15,7 +15,7 @@ import {
 } from "./styles";
 import DoctorCard from "components/DoctorCard";
 import { DOCTORS } from "data/doctors";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 const styles = {
   subTitle: {
@@ -26,36 +26,36 @@ const styles = {
   },
 };
 
-const settings = {
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1415,
-      settings: {
-        slidesToShow: 2,
-      },
-    },
-  ],
-};
+// const settings = {
+//   speed: 500,
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   responsive: [
+//     {
+//       breakpoint: 1415,
+//       settings: {
+//         slidesToShow: 2,
+//       },
+//     },
+//   ],
+// };
 
 const Dentists = () => {
-  let list = useRef<any>(undefined).current;
+  // let list = useRef<any>(undefined).current;
 
-  const next = () => {
-    if (list) {
-      list.slickNext();
-    }
-  };
-  const previous = () => {
-    if (list) {
-      list.slickPrev();
-    }
-  };
+  // const next = () => {
+  //   if (list) {
+  //     list.slickNext();
+  //   }
+  // };
+  // const previous = () => {
+  //   if (list) {
+  //     list.slickPrev();
+  //   }
+  // };
 
   return (
-    <Wrapper>
+    <Wrapper id="doctors">
       <Container>
         <TittleContainer>
           <BigTitle>Кваліфіковані стоматологи</BigTitle>
@@ -104,8 +104,8 @@ const Dentists = () => {
 
 export default Dentists;
 
-const StyledSlider = styled(Slider)`
-  .slick-list {
-    padding: 0 !important;
-  }
-`;
+// const StyledSlider = styled(Slider)`
+//   .slick-list {
+//     padding: 0 !important;
+//   }
+// `;

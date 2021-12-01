@@ -22,7 +22,7 @@ const styles = {
 
 const AboutCompany = () => {
   return (
-    <Container>
+    <Container id="about_clinic">
       <BigTitle>
         «Стоматологія лікаря Ляшука» - це сімейна справа і<br /> репутація для
         нас понад усе!{" "}

@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "Gilroy-Medium";
   src: url("assets/fonts/Gilroy-Medium.ttf") format("truetype"),

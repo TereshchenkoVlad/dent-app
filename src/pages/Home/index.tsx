@@ -1,13 +1,14 @@
 import React from "react";
 
-import Header from "components/Header";
-import Services from "components/Services";
-import MainImage from "components/MainImage";
 import { AppConfig } from "config/applicationConfig";
-import AboutCompany from "./components/AboutCompany";
-import Dentists from "./components/Dentists";
-import Costs from "./components/Costs";
+
+import Header from "components/Header";
 import Footer from "components/Footer";
+import Costs from "./components/Costs";
+import MainImage from "components/MainImage";
+import Dentists from "./components/Dentists";
+import Services from "./components/Services";
+import AboutCompany from "./components/AboutCompany";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Dentists />
       <Costs />
       <iframe
+        id="contact"
         width="100%"
         height="528"
         loading="lazy"

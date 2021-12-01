@@ -2,36 +2,25 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+export interface LinkType {
+  id: string;
+  name: string;
+}
+
 const ua = {
   translation: {
     header: {
       location: "Софіївська Борщагівка, ЖК «Софія», вул. Миру 30/18",
-      navigation: {
-        services: "Послуги",
-        about_clinic: "Про клініку",
-        doctors: "Лікарі",
-        prices: "Ціни",
-        contacts: "Контакти",
-      },
+      links: [
+        { id: "services", name: "Послуги" },
+        { id: "about_clinic", name: "Про клініку" },
+        { id: "doctors", name: "Лікарі" },
+        { id: "prices", name: "Ціни" },
+        { id: "contact", name: "Контакти" },
+      ] as LinkType[],
     },
   },
 };
-
-// const en = {
-//   translation: {
-//     header: {
-//       location:
-//         "Sofiyivska Borshchahivka, Residential Complex «Sofia», street Peace 30/18",
-//       navigation: {
-//         services: "Services",
-//         about_clinic: "About clinic",
-//         doctors: "Doctors",
-//         prices: "Prices",
-//         contacts: "Contacts",
-//       },
-//     },
-//   },
-// };
 
 i18n
   .use(LanguageDetector)

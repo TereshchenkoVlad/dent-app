@@ -7,7 +7,7 @@ import ServiceItem from "./ServiceItem";
 
 const Services = () => {
   return (
-    <Container>
+    <Container id="services">
       {SERVICES.map((s, i) => {
         if (i === 0) {
           return (

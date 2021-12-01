@@ -8,6 +8,10 @@ const third_point = 825;
 export const forth_point = 575;
 
 export const Container = styled.div``;
+export const Link = styled.a`
+  text-decoration: none;
+  color: ${theme.black};
+`;
 
 export const PreHeader = styled.div`
   display: flex;

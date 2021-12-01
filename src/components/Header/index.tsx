@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { t } from "i18next";
 
-import { MediumText } from "styles/text";
+import { LinkType } from "config/i18n";
+
+import DropMenu from "./DropMenu";
 
 import logoDark from "assets/images/logoDark.svg";
 import phoneIcon from "assets/images/icons/phone.svg";
@@ -10,25 +13,25 @@ import locationIcon from "assets/images/icons/location.svg";
 import messengerIcon from "assets/images/icons/messenger.svg";
 
 import {
+  Link,
   Social,
   Header,
+  WebLinks,
   LogoIcon,
   PhoneIcon,
   PreHeader,
   ViberIcon,
   Container,
   Navigation,
+  BurgerIcon,
   LocationIcon,
   MessengerIcon,
-  LocationContainer,
-  ContactsContainer,
-  WebLinks,
   BurgerContainer,
-  BurgerIcon,
+  ContactsContainer,
+  LocationContainer,
 } from "./styles";
-import { t } from "i18next";
 import { theme } from "styles/colors";
-import DropMenu from "./DropMenu";
+import { MediumText } from "styles/text";
 
 const styles = {
   acitionText: {
@@ -40,6 +43,8 @@ const HeaderComponent = () => {
   const [drop, setDrop] = useState(false);
 
   const toogleDrop = () => () => setDrop(!drop);
+
+  const LINKS = t("header.links", { returnObjects: true }) as LinkType[];
 
   return (
     <Container>
@@ -58,21 +63,17 @@ const HeaderComponent = () => {
         <Navigation>
           <LogoIcon src={logoDark} alt="logo" />
           <WebLinks>
-            <MediumText color={theme.black} fs={16} style={styles.acitionText}>
-              {t("header.navigation.services")}
-            </MediumText>
-            <MediumText color={theme.black} fs={16} style={styles.acitionText}>
-              {t("header.navigation.about_clinic")}
-            </MediumText>
-            <MediumText color={theme.black} fs={16} style={styles.acitionText}>
-              {t("header.navigation.doctors")}
-            </MediumText>
-            <MediumText color={theme.black} fs={16} style={styles.acitionText}>
-              {t("header.navigation.prices")}
-            </MediumText>
-            <MediumText color={theme.black} fs={16}>
-              {t("header.navigation.contacts")}
-            </MediumText>
+            {LINKS.map((link, index) => {
+              const style =
+                LINKS.length - 1 === index ? {} : styles.acitionText;
+              return (
+                <Link href={`#` + link.id} key={link.id}>
+                  <MediumText color={theme.black} fs={16} {...{ style }}>
+                    {link.name}
+                  </MediumText>
+                </Link>
+              );
+            })}
           </WebLinks>
         </Navigation>
         <Social>
