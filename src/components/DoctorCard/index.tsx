@@ -42,7 +42,7 @@ const Container = styled.div`
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  margin-bottom: 20px;
+  margin: 20px;
 `;
 
 const Image = styled.img`

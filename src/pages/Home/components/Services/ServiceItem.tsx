@@ -44,7 +44,7 @@ const ItemWrapper = styled.div`
   height: 256px;
   border-radius: 5px;
   background-color: ${theme.blueTransparent};
-  margin-bottom: 20px;
+  margin: 20px;
   position: relative;
   cursor: pointer;
   user-select: none;

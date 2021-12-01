@@ -4,6 +4,10 @@ import callImage from "assets/images/icons/call_button.svg";
 import styled from "styled-components";
 import { theme } from "styles/colors";
 
+const first_point = 935;
+const second_point = 700;
+const third_point = 500;
+
 const PhoneAnimation = () => {
   return (
     <Container>
@@ -35,6 +39,10 @@ const Container = styled.div`
       transform: translateY(0);
     }
   }
+  @media only screen and (max-width: ${second_point}px) {
+    right: 20px;
+    bottom: 10px;
+  }
 `;
 
 const Block = styled.div`
@@ -46,6 +54,18 @@ const CallImage = styled.img`
   z-index: 1;
   width: 200px;
   height: 200px;
+  @media only screen and (max-width: ${first_point}px) {
+    width: 150px;
+    height: 150px;
+  }
+  @media only screen and (max-width: ${second_point}px) {
+    width: 100px;
+    height: 100px;
+  }
+  @media only screen and (max-width: ${third_point}px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const Circle = styled.div`
@@ -64,5 +84,18 @@ const Circle = styled.div`
       transform: scale(1.4);
       opacity: 0.1;
     }
+  }
+
+  @media only screen and (max-width: ${first_point}px) {
+    width: 150px;
+    height: 150px;
+  }
+  @media only screen and (max-width: ${second_point}px) {
+    width: 100px;
+    height: 100px;
+  }
+  @media only screen and (max-width: ${third_point}px) {
+    width: 80px;
+    height: 80px;
   }
 `;

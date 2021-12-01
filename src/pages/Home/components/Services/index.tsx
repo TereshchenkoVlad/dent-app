@@ -42,6 +42,6 @@ export default Services;
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 100px 60px 80px 60px;
+  justify-content: center;
+  padding: 100px 0 80px 0;
 `;

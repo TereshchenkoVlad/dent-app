@@ -5,10 +5,6 @@ export const Wrapper = styled.div`
   margin-bottom: 80px;
 `;
 
-export const Container = styled.div`
-  padding: 0 60px;
-`;
-
 export const TittleContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,11 +20,10 @@ export const ActionContainer = styled.div`
   margin-bottom: 40px;
 `;
 
-export const ButtonContainer = styled.div`
+export const DentistsContainer = styled.div`
   display: flex;
-  position: absolute;
-  right: 0;
-  top: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const Line = styled.div`

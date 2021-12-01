@@ -19,8 +19,13 @@ const InputComponent = ({ label }: Props) => {
 
 export default InputComponent;
 
+const second_point = 485;
+
 const Container = styled.div`
   margin-bottom: 25px;
+  @media only screen and (max-width: ${second_point}px) {
+    margin-bottom: 15px;
+  }
 `;
 
 const Input = styled.input`
@@ -31,4 +36,9 @@ const Input = styled.input`
   border-radius: 5px;
   background-color: ${theme.mainWhite};
   margin-top: 10px;
+
+  @media only screen and (max-width: ${second_point}px) {
+    width: 260px;
+    height: 40px;
+  }
 `;

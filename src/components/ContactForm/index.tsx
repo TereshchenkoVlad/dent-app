@@ -2,16 +2,12 @@ import React from "react";
 
 import CallBack from "components/CallBack";
 
-import { Form } from "./styles";
-import { Title } from "styles/text";
 import Input from "components/Input";
 import ButtonComponent from "components/Button";
 
+import { Form, FormTitle } from "./styles";
+
 const styles = {
-  title: {
-    marginBottom: 30,
-    marginTop: 50,
-  },
   callBack: {
     marginBottom: 30,
   },
@@ -26,7 +22,7 @@ const styles = {
 const ContactForm = () => {
   return (
     <Form>
-      <Title style={styles.title}>Залишіть свої контакти</Title>
+      <FormTitle>Залишіть свої контакти</FormTitle>
       <div style={styles.callBack}>
         <CallBack type="dark" />
       </div>

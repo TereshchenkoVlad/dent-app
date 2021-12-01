@@ -21,7 +21,7 @@ export default ServiceDescription;
 const Container = styled.div`
   width: 315px;
   height: 256px;
-  margin-bottom: 20px;
+  margin: 20px;
   user-select: none;
 `;
 

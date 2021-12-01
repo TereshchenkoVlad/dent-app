@@ -13,6 +13,8 @@ const ButtonComponent = () => {
 
 export default ButtonComponent;
 
+const second_point = 485;
+
 const Container = styled.div`
   width: 220px;
   height: 50px;
@@ -21,4 +23,9 @@ const Container = styled.div`
   align-items: center;
   border-radius: 40px;
   border: 2px solid ${theme.mainWhite};
+
+  @media only screen and (max-width: ${second_point}px) {
+    width: 160px;
+    height: 40px;
+  }
 `;

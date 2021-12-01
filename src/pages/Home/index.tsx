@@ -15,7 +15,7 @@ const Home = () => {
     <div>
       <Header />
       <MainImage />
-      <Services />
+      {/* <Services />
       <AboutCompany />
       <Dentists />
       <Costs />
@@ -28,7 +28,7 @@ const Home = () => {
         style={{ border: 0 }}
         src={AppConfig.google_api}
       />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };
