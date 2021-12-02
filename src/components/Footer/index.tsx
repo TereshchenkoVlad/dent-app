@@ -1,14 +1,18 @@
 import React from "react";
 
-import { MediumText } from "styles/text";
+import Week from "./Week";
+
 import {
-  Block,
-  Container,
   Logo,
-  MessengerIcon,
+  Block,
   Social,
+  LinkText,
+  Container,
   ViberIcon,
+  MessengerIcon,
+  LocationText,
 } from "./styles";
+import { MediumText } from "styles/text";
 
 import logoLight from "assets/images/logoLight.svg";
 import viberIcon from "assets/images/icons/viber.svg";
@@ -26,17 +30,18 @@ const Footer = () => {
     <Container>
       <Block>
         <Logo src={logoLight} alt="logo light" />
-        <MediumText fs={16}>
-          Пн-Пт 9.00-19.00
-          <br /> Сб 9.00-16.00
-        </MediumText>
+        <div>
+          <Week label="Пн-Пт" text="9.00-19.00" />
+          <Week label="Сб" text="9.00-16.00" />
+        </div>
+
         <MediumText fs={16}>
           (096) 020-52-00
           <br /> liashukdent@gmail.com
         </MediumText>
-        <MediumText fs={16}>
+        <LocationText>
           Софіївська Борщагівка, ЖК «Софія», вул. Миру 30/18
-        </MediumText>
+        </LocationText>
         <Social>
           <ViberIcon src={viberIcon} alt="viber" />
           <MessengerIcon src={messengerIcon} alt="messenger" />
@@ -44,18 +49,10 @@ const Footer = () => {
       </Block>
 
       <Block align="center">
-        <MediumText style={styles.navText} fs={16}>
-          Послуги
-        </MediumText>
-        <MediumText style={styles.navText} fs={16}>
-          Про клініку
-        </MediumText>
-        <MediumText style={styles.navText} fs={16}>
-          Лікарі
-        </MediumText>
-        <MediumText style={styles.navText} fs={16}>
-          Ціни
-        </MediumText>
+        <LinkText>Послуги</LinkText>
+        <LinkText>Про клініку</LinkText>
+        <LinkText>Лікарі</LinkText>
+        <LinkText>Ціни</LinkText>
         <MediumText fs={16}>Контакти</MediumText>
       </Block>
 

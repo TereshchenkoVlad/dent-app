@@ -9,11 +9,12 @@ import { theme } from "styles/colors";
 
 interface Props {
   type: "light" | "dark";
+  style?: React.CSSProperties;
 }
 
-const CallBack = ({ type }: Props) => {
+const CallBack = ({ type, style }: Props) => {
   return (
-    <Container>
+    <Container style={style}>
       <TelegramIcon
         src={type === "light" ? telegramIconLight : telegramIcon}
         alt="telegram"

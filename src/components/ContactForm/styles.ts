@@ -17,6 +17,7 @@ export const Form = styled.form`
   background-color: ${theme.mainBlue};
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  z-index: 10;
 
   @media only screen and (max-width: ${first_point}px) {
     position: fixed;

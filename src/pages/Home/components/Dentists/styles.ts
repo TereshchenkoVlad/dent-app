@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { theme } from "styles/colors";
+import { MediumText } from "styles/text";
+
+const first_point = 515;
 
 export const Wrapper = styled.div`
   margin-bottom: 80px;
@@ -11,13 +14,18 @@ export const TittleContainer = styled.div`
   align-items: center;
 `;
 
-export const ActionContainer = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const Subtitle = styled(MediumText)`
+  text-align: center;
+  font-size: 18px;
   margin-top: 30px;
   margin-bottom: 40px;
+  color: ${theme.black};
+
+  @media only screen and (max-width: ${first_point}px) {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const DentistsContainer = styled.div`

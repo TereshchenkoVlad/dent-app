@@ -2,27 +2,17 @@ import React from "react";
 
 import DoctorCard from "components/DoctorCard";
 
-import { theme } from "styles/colors";
-import { BigTitle, MediumText } from "styles/text";
+import { BigTitle } from "styles/text";
 
 import {
   Line,
   Wrapper,
-  ActionContainer,
   TittleContainer,
   DentistsContainer,
+  Subtitle,
 } from "./styles";
 
 import { DOCTORS } from "data/doctors";
-
-const styles = {
-  subTitle: {
-    textAlign: "center" as any,
-  },
-  button: {
-    marginRight: 28,
-  },
-};
 
 const Dentists = () => {
   return (
@@ -32,12 +22,10 @@ const Dentists = () => {
         <Line />
       </TittleContainer>
 
-      <ActionContainer>
-        <MediumText style={styles.subTitle} fs={18} color={theme.black}>
-          Допоможуть зберігти і повернути
-          <br /> здоров’я ваших зубів
-        </MediumText>
-      </ActionContainer>
+      <Subtitle>
+        Допоможуть зберігти і повернути
+        <br /> здоров’я ваших зубів
+      </Subtitle>
 
       <DentistsContainer>
         {DOCTORS.map((doctor, i) => (

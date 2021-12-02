@@ -55,7 +55,7 @@ const ItemWrapper = styled.div`
     color: ${theme.mainWhite};
   }
   &:hover .service_icon {
-    filter: brightness(300%);
+    filter: brightness(0) invert(1);
   }
 `;
 

@@ -1,26 +1,36 @@
 import styled from "styled-components";
+import { BigTitle } from "styles/text";
 
 export const Container = styled.div`
-  padding: 0 60px 100px 60px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  margin-bottom: 100px;
 `;
 
-export const Inner = styled.div`
+export const AboutTitle = styled(BigTitle)`
+  width: 722px;
+  margin-bottom: 40px;
+`;
+
+export const ImageContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
+  flex-direction: column;
+  margin-right: 60px;
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 520px;
+  width: 520px;
+  height: 600px;
 `;
 
 export const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 45px;
 `;
 
 export const TeamImage = styled.img`

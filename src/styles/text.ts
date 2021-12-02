@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { theme } from "./colors";
 
+const first_point = 515;
+
 interface TextProps {
   color?: string;
   fs?: number;
@@ -10,6 +12,10 @@ export const BigTitle = styled.p`
   color: ${theme.black};
   font-size: 28px;
   font-family: Gilroy-SemiBold;
+
+  @media only screen and (max-width: ${first_point}px) {
+    font-size: 24px;
+  }
 `;
 
 export const Title = styled.p`
