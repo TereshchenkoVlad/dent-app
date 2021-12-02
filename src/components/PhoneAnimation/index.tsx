@@ -22,6 +22,7 @@ const PhoneAnimation = () => {
 export default PhoneAnimation;
 
 const Container = styled.div`
+  cursor: pointer;
   position: absolute;
   right: 60px;
   bottom: 15px;

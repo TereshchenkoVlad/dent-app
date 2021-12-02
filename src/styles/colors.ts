@@ -4,6 +4,7 @@ const lightTheme = {
   blueTransparent: "#F2FBFE",
   black: "#2B2C2F",
   greyDark: "rgba(43, 44, 47, 0.8)",
+  red: "red",
 };
 
 const darkTheme = {
@@ -12,6 +13,7 @@ const darkTheme = {
   blueTransparent: "#F2FBFE",
   black: "#2B2C2F",
   greyDark: "rgba(43, 44, 47, 0.8)",
+  red: "red",
 };
 
 export const theme = true ? lightTheme : darkTheme;

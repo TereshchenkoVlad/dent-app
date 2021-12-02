@@ -16,6 +16,7 @@ export default ButtonComponent;
 const second_point = 485;
 
 const Container = styled.div`
+  cursor: pointer;
   width: 220px;
   height: 50px;
   display: flex;
