@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
+import * as emailjs from "emailjs-com";
 
 import { FormSchema } from "helpers/validations";
 import { usePopUpContext } from "context/popupContext";
@@ -10,6 +11,7 @@ import CallBack from "components/CallBack";
 import ButtonComponent from "components/Button";
 
 import { Form, FormTitle } from "./styles";
+import { AppConfig } from "config/applicationConfig";
 
 const styles = {
   callBack: {
@@ -33,10 +35,31 @@ const ContactForm = () => {
       name: "",
       phone: "",
     },
-    onSubmit: (values) => {
+    onSubmit: ({ name, phone }) => {
       setLoading(true);
-      console.log("values =>", values);
-      setLoading(false);
+      const templateParams = {
+        name,
+        phone,
+      };
+      emailjs
+        .send(
+          AppConfig.emailjs.serviceID,
+          AppConfig.emailjs.templateID,
+          templateParams,
+          AppConfig.emailjs.userID
+        )
+        .then((res) => {
+          console.log("emailjs: Success ", res.status, res.text);
+          onClose();
+        })
+        .catch((e) => {
+          console.log("emailjs: Error ", e);
+          const error = e.text ? e.text.slice(0, 50) : "Something went wrong";
+          formik.setErrors({ name: error, phone: error });
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     },
   });
   const { values, errors, handleChange, handleBlur, handleSubmit } = formik;

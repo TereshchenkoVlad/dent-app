@@ -1,25 +1,26 @@
 import React from "react";
 
-import { MediumText, RegularType1 } from "styles/text";
 import {
   Content,
+  BoldText,
   Container,
+  NormalText,
   TeamImage,
   AboutTitle,
+  TextWrapper,
   ImageContainer,
-  ButtonsContainer,
+  // ButtonsContainer,
 } from "./styles";
 
-import ButtonFill from "components/ButtonFill";
-import CallBack from "components/CallBack";
-import { theme } from "styles/colors";
+// import ButtonFill from "components/ButtonFill";
+// import CallBack from "components/CallBack";
 
-const styles = {
-  callBack: {
-    width: 177,
-    marginLeft: 25,
-  } as React.CSSProperties,
-};
+// const styles = {
+//   callBack: {
+//     width: 177,
+//     marginLeft: 25,
+//   } as React.CSSProperties,
+// };
 
 const AboutCompany = () => {
   return (
@@ -36,31 +37,37 @@ const AboutCompany = () => {
       </ImageContainer>
 
       <Content>
-        <RegularType1>
-          Головним нашим принципом є чесність і довірливі стосунки з пацієнтом.
-          Ми надаємо повний спектр професійної стоматологічної допомоги для
-          усієї родині, від найменшого до найстаршого.
-        </RegularType1>
-        <MediumText fs={22} color={theme.black}>
-          Для «Стоматологія лікаря Ляшука» існує мало неможливого. Ми зробимо
-          все, щоб ваша посмішка відповідала вашим уявленням прекрасного. Для
-          кожного випадку підбираємо унікальне рішення, яке дозволяє оптимально
-          скоротити витрати часу і коштів, при цьому досягаючи довговічного
-          результату.
-        </MediumText>
-        <RegularType1>
-          Ми усвідомлюємо, що виконання стоматологічних послуг на найвищому
-          рівні можливе лише при повному використанні сучасних технологій, тому
-          ми постійно вдосконалюємося і вчимося. Працюємо за міжнародними
-          протоколами і керуємося лише доказовою медициною.
-        </RegularType1>
+        <TextWrapper>
+          <NormalText>
+            Головним нашим принципом є чесність і довірливі стосунки з
+            пацієнтом. Ми надаємо повний спектр професійної стоматологічної
+            допомоги для усієї родині, від найменшого до найстаршого.
+          </NormalText>
+        </TextWrapper>
+        <TextWrapper>
+          <BoldText>
+            Для «Стоматологія лікаря Ляшука» існує мало неможливого. Ми зробимо
+            все, щоб ваша посмішка відповідала вашим уявленням прекрасного. Для
+            кожного випадку підбираємо унікальне рішення, яке дозволяє
+            оптимально скоротити витрати часу і коштів, при цьому досягаючи
+            довговічного результату.
+          </BoldText>
+        </TextWrapper>
+        <TextWrapper>
+          <NormalText>
+            Ми усвідомлюємо, що виконання стоматологічних послуг на найвищому
+            рівні можливе лише при повному використанні сучасних технологій,
+            тому ми постійно вдосконалюємося і вчимося. Працюємо за міжнародними
+            протоколами і керуємося лише доказовою медициною.
+          </NormalText>
+        </TextWrapper>
 
-        <ButtonsContainer>
+        {/* <ButtonsContainer>
           <ButtonFill title="Записатись на консультацію" />
           <div style={styles.callBack}>
             <CallBack type="light" />
           </div>
-        </ButtonsContainer>
+        </ButtonsContainer> */}
       </Content>
     </Container>
   );

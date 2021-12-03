@@ -39,9 +39,22 @@ const Services = () => {
 
 export default Services;
 
+const first_point = 1000;
+const second_point = 700;
+const third_point = 400;
+
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 100px 0 80px 0;
+  @media only screen and (max-width: ${first_point}px) {
+    padding: 60px 0 40px 0;
+  }
+  @media only screen and (max-width: ${second_point}px) {
+    padding: 20px 0 20px 0;
+  }
+  @media only screen and (max-width: ${third_point}px) {
+    padding: 0px 0 20px 0;
+  }
 `;
