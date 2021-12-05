@@ -20,6 +20,7 @@ import {
   LogoIcon,
   PhoneIcon,
   PreHeader,
+  PhoneLink,
   ViberIcon,
   Container,
   Navigation,
@@ -55,7 +56,9 @@ const HeaderComponent = () => {
         </LocationContainer>
         <ContactsContainer>
           <PhoneIcon src={phoneIcon} alt="phone" />
-          <MediumText>(096) 020-52-00</MediumText>
+          <PhoneLink href="tel:0960205200">
+            <MediumText>(096) 020-52-00</MediumText>
+          </PhoneLink>
         </ContactsContainer>
       </PreHeader>
 
@@ -77,8 +80,12 @@ const HeaderComponent = () => {
           </WebLinks>
         </Navigation>
         <Social>
-          <ViberIcon src={viberIcon} alt="viber" />
-          <MessengerIcon src={messengerIcon} alt="messenger" />
+          <Link href="viber://chat?number=380960205200">
+            <ViberIcon src={viberIcon} alt="viber" />
+          </Link>
+          <Link href="https://www.facebook.com/liashuk.clinic/" target="_blank">
+            <MessengerIcon src={messengerIcon} alt="messenger" />
+          </Link>
         </Social>
         <BurgerContainer>
           {drop && <DropMenu />}

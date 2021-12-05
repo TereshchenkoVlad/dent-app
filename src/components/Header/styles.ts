@@ -134,3 +134,8 @@ export const BurgerIcon = styled.img`
     height: 25px;
   }
 `;
+
+export const PhoneLink = styled.a`
+  text-decoration: none;
+  color: ${theme.mainWhite};
+`;

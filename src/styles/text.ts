@@ -8,6 +8,12 @@ interface TextProps {
   fs?: number;
 }
 
+export const LargeTitle = styled.p`
+  color: ${theme.mainWhite};
+  font-size: 52px;
+  font-family: Gilroy-Medium;
+`;
+
 export const BigTitle = styled.p`
   color: ${theme.black};
   font-size: 28px;

@@ -48,8 +48,13 @@ const Footer = () => {
           Софіївська Борщагівка, ЖК «Софія», вул. Миру 30/18
         </LocationText>
         <Social>
-          <ViberIcon src={viberIcon} alt="viber" />
-          <MessengerIcon src={messengerIcon} alt="messenger" />
+          <Link href="viber://chat?number=380960205200">
+            <ViberIcon src={viberIcon} alt="viber" />
+          </Link>
+
+          <Link href="https://www.facebook.com/liashuk.clinic/" target="_blank">
+            <MessengerIcon src={messengerIcon} alt="messenger" />
+          </Link>
         </Social>
       </FirstBlock>
 
