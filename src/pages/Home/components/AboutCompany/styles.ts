@@ -66,19 +66,27 @@ export const Content = styled.div`
 export const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
+  @media only screen and (max-width: ${first_point}px) {
+    margin-top: 40px;
+  }
+  @media only screen and (max-width: ${third_point}px) {
+    margin-top: 20px;
+  }
 `;
 
 export const TeamImage = styled.img`
   height: 600px;
+  border-radius: 5px;
   @media only screen and (max-width: ${second_point}px) {
-    height: 400px;
+    height: 350px;
   }
   @media only screen and (max-width: ${third_point}px) {
-    height: 320px;
+    height: 290px;
   }
 `;
 
 export const TextWrapper = styled.div`
+  text-align: justify;
   @media only screen and (max-width: ${first_point}px) {
     margin-top: 40px;
   }
@@ -104,5 +112,13 @@ export const BoldText = styled(MediumText)`
   }
   @media only screen and (max-width: ${third_point}px) {
     font-size: 17px;
+  }
+`;
+
+export const CallBackWrapper = styled.div`
+  width: 177px;
+  margin-left: 25px;
+  @media only screen and (max-width: ${second_point}px) {
+    display: none;
   }
 `;

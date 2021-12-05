@@ -20,6 +20,7 @@ interface Props {
 const ServiceItem = ({ title, iconURL, imageURL, description }: Props) => {
   return (
     <ItemWrapper>
+      <Filter className="service_image" />
       <ItemImage className="service_image" src={imageURL} alt="main" />
 
       <Item>
@@ -39,6 +40,8 @@ const ServiceItem = ({ title, iconURL, imageURL, description }: Props) => {
 
 export default ServiceItem;
 
+const first_point = 500;
+
 const ItemWrapper = styled.div`
   width: 315px;
   height: 256px;
@@ -48,6 +51,7 @@ const ItemWrapper = styled.div`
   position: relative;
   cursor: pointer;
   user-select: none;
+  border-radius: 5px;
   &:hover .service_image {
     opacity: 1;
   }
@@ -57,11 +61,18 @@ const ItemWrapper = styled.div`
   &:hover .service_icon {
     filter: brightness(0) invert(1);
   }
+
+  @media only screen and (max-width: ${first_point}px) {
+    width: 280px;
+    height: 240px;
+    margin: 15px;
+  }
 `;
 
 const Item = styled.div`
   position: absolute;
   padding: 0 30px;
+  z-index: 2;
 `;
 
 const ItemImage = styled.img`
@@ -71,7 +82,25 @@ const ItemImage = styled.img`
   width: 100%;
   height: 100%;
   opacity: 0;
+  border-radius: 5px;
   transition: opacity ease-in-out 0.35s;
+`;
+
+const Filter = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 5px;
+  transition: opacity ease-in-out 0.35s;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 172, 237, 0.7),
+    rgba(0, 172, 237, 0.7)
+  );
+  z-index: 1;
 `;
 
 const Icon = styled.img`
@@ -79,4 +108,7 @@ const Icon = styled.img`
   width: 35px;
   height: 35px;
   margin-bottom: 15px;
+  @media only screen and (max-width: ${first_point}px) {
+    margin-top: 25px;
+  }
 `;

@@ -1,14 +1,20 @@
 import React from "react";
+import { t } from "i18next";
+
+import { LinkType } from "config/i18n";
 
 import Week from "./Week";
 
 import {
   Logo,
-  Block,
+  Link,
   Social,
   LinkText,
   Container,
   ViberIcon,
+  FirstBlock,
+  SecondBlock,
+  ThirdBlock,
   MessengerIcon,
   LocationText,
 } from "./styles";
@@ -19,23 +25,22 @@ import viberIcon from "assets/images/icons/viber.svg";
 import messengerIcon from "assets/images/icons/messenger.svg";
 
 const styles = {
-  navText: {
-    marginRight: 80,
-  },
   guarantee: { marginBottom: 15 },
 };
 
 const Footer = () => {
+  const LINKS = t("header.links", { returnObjects: true }) as LinkType[];
+
   return (
     <Container>
-      <Block>
+      <FirstBlock>
         <Logo src={logoLight} alt="logo light" />
         <div>
           <Week label="Пн-Пт" text="9.00-19.00" />
           <Week label="Сб" text="9.00-16.00" />
         </div>
 
-        <MediumText fs={16}>
+        <MediumText fs={16} style={{ visibility: "unset" }}>
           (096) 020-52-00
           <br /> liashukdent@gmail.com
         </MediumText>
@@ -46,17 +51,17 @@ const Footer = () => {
           <ViberIcon src={viberIcon} alt="viber" />
           <MessengerIcon src={messengerIcon} alt="messenger" />
         </Social>
-      </Block>
+      </FirstBlock>
 
-      <Block align="center">
-        <LinkText>Послуги</LinkText>
-        <LinkText>Про клініку</LinkText>
-        <LinkText>Лікарі</LinkText>
-        <LinkText>Ціни</LinkText>
-        <MediumText fs={16}>Контакти</MediumText>
-      </Block>
+      <SecondBlock>
+        {LINKS.map((link) => (
+          <Link key={link.id} href={`#` + link.id}>
+            <LinkText>{link.name}</LinkText>
+          </Link>
+        ))}
+      </SecondBlock>
 
-      <Block>
+      <ThirdBlock>
         <MediumText fs={16}>2021 Стоматологія лікаря Ляшука</MediumText>
         <div>
           <MediumText style={styles.guarantee} fs={16}>
@@ -64,7 +69,7 @@ const Footer = () => {
           </MediumText>
           <MediumText fs={16}>Публічний договір ФОП Ляшук</MediumText>
         </div>
-      </Block>
+      </ThirdBlock>
     </Container>
   );
 };

@@ -9,20 +9,24 @@ import {
   AboutTitle,
   TextWrapper,
   ImageContainer,
-  // ButtonsContainer,
+  CallBackWrapper,
+  ButtonsContainer,
 } from "./styles";
 
-// import ButtonFill from "components/ButtonFill";
-// import CallBack from "components/CallBack";
+import ButtonFill from "components/ButtonFill";
+import CallBack from "components/CallBack";
+import { usePopUpContext } from "context/popupContext";
 
-// const styles = {
-//   callBack: {
-//     width: 177,
-//     marginLeft: 25,
-//   } as React.CSSProperties,
-// };
+import teamImage from "assets/images/team.png";
 
 const AboutCompany = () => {
+  const { onOpen } = usePopUpContext();
+
+  const onSign = () => {
+    document.getElementById("header")?.scrollIntoView();
+    onOpen();
+  };
+
   return (
     <Container id="about_clinic">
       <ImageContainer>
@@ -30,10 +34,7 @@ const AboutCompany = () => {
           «Стоматологія лікаря Ляшука» - це сімейна справа і репутація для нас
           понад усе!
         </AboutTitle>
-        <TeamImage
-          src="https://i.pinimg.com/originals/0d/36/23/0d3623c187d15098071f74361444ef34.jpg"
-          alt="team"
-        />
+        <TeamImage src={teamImage} alt="team" />
       </ImageContainer>
 
       <Content>
@@ -62,12 +63,12 @@ const AboutCompany = () => {
           </NormalText>
         </TextWrapper>
 
-        {/* <ButtonsContainer>
-          <ButtonFill title="Записатись на консультацію" />
-          <div style={styles.callBack}>
+        <ButtonsContainer>
+          <ButtonFill title="Записатись на консультацію" onClick={onSign} />
+          <CallBackWrapper>
             <CallBack type="light" />
-          </div>
-        </ButtonsContainer> */}
+          </CallBackWrapper>
+        </ButtonsContainer>
       </Content>
     </Container>
   );

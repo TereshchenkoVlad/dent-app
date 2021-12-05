@@ -3,12 +3,8 @@ import { theme } from "styles/colors";
 import { MediumText } from "styles/text";
 
 const first_point = 1117;
-const second_point = 825;
-const third_point = 685;
-
-interface Props {
-  align?: "center";
-}
+const second_point = 660;
+const third_point = 370;
 
 export const Container = styled.div`
   display: flex;
@@ -16,33 +12,62 @@ export const Container = styled.div`
   margin-top: 8px;
 `;
 
-export const Block = styled.div`
-  height: 100px;
-  padding: 0 60px 0 60px;
+const InitialBlock = styled.div`
+  min-height: 100px;
   background-color: ${theme.mainBlue};
+  padding: 0 60px 0 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  justify-content: ${({ align }: Props) => (align ? align : "space-between")};
   margin-top: 2px;
 
-  @media only screen and (max-width: ${second_point}px) {
+  @media only screen and (max-width: ${first_point}px) {
     padding: 0 30px 0 30px;
   }
+`;
+
+export const FirstBlock = styled(InitialBlock)`
+  justify-content: space-between;
+  @media only screen and (max-width: ${second_point}px) {
+    flex-direction: column;
+  }
+`;
+
+export const SecondBlock = styled(InitialBlock)`
+  justify-content: center;
   @media only screen and (max-width: ${third_point}px) {
     flex-direction: column;
-    height: 250px;
-    align-items: center;
-    padding: 20px 0;
+    padding: 15px 0;
   }
+`;
+
+export const ThirdBlock = styled(InitialBlock)`
+  justify-content: space-between;
+  @media only screen and (max-width: ${second_point}px) {
+    flex-direction: column;
+    padding: 15px;
+    align-items: flex-start;
+  }
+`;
+
+export const Link = styled.a`
+  text-decoration: none;
+  color: ${theme.black};
 `;
 
 export const LinkText = styled(MediumText)`
   margin-right: 80px;
   font-size: 16px;
+  @media only screen and (max-width: ${first_point}px) {
+    margin-right: 40px;
+  }
+  @media only screen and (max-width: ${second_point}px) {
+    margin-right: 10px;
+    font-size: 14px;
+  }
   @media only screen and (max-width: ${third_point}px) {
+    flex-direction: column;
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 `;
 

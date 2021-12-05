@@ -55,6 +55,7 @@ const TitleContainer = styled.div`
 const DescriptionContainer = styled.div`
   max-width: 685px;
   margin: 30px 0 40px 0;
+  text-align: justify;
 `;
 
 const Line = styled.div`

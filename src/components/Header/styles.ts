@@ -36,6 +36,9 @@ export const Header = styled.div`
   @media only screen and (max-width: ${second_point}px) {
     padding: 0px 20px;
   }
+  @media only screen and (max-width: ${forth_point}px) {
+    height: 50px;
+  }
 `;
 
 export const Social = styled.div`

@@ -18,11 +18,19 @@ const ServiceDescription = () => {
 
 export default ServiceDescription;
 
+const first_point = 500;
+
 const Container = styled.div`
   width: 315px;
   height: 256px;
   margin: 20px;
   user-select: none;
+
+  @media only screen and (max-width: ${first_point}px) {
+    width: 280px;
+    height: 240px;
+    margin: 15px;
+  }
 `;
 
 const Line = styled.div`

@@ -43,3 +43,9 @@ export const FormTitle = styled(Title)`
     margin-top: 30px;
   }
 `;
+
+export const CloseWrapper = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+`;

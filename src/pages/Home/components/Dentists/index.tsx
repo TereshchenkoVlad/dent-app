@@ -33,7 +33,7 @@ const Dentists = () => {
             key={i.toString()}
             title={doctor.name}
             description={doctor.description}
-            url=""
+            url={doctor.url}
           />
         ))}
       </DentistsContainer>

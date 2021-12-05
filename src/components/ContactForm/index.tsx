@@ -10,7 +10,7 @@ import Loader from "components/Loader";
 import CallBack from "components/CallBack";
 import ButtonComponent from "components/Button";
 
-import { Form, FormTitle } from "./styles";
+import { Form, FormTitle, CloseWrapper } from "./styles";
 import { AppConfig } from "config/applicationConfig";
 
 const styles = {
@@ -66,6 +66,7 @@ const ContactForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
+      <CloseWrapper onClick={onClose}>CLOSE</CloseWrapper>
       <FormTitle>Залишіть свої контакти</FormTitle>
       <div style={styles.callBack}>
         <CallBack type="dark" />

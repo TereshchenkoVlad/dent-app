@@ -47,7 +47,7 @@ const HeaderComponent = () => {
   const LINKS = t("header.links", { returnObjects: true }) as LinkType[];
 
   return (
-    <Container>
+    <Container id="header">
       <PreHeader>
         <LocationContainer>
           <LocationIcon src={locationIcon} alt="location" />
