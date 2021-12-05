@@ -5,7 +5,7 @@ import { usePopUpContext } from "context/popupContext";
 
 import { SubTitle, Title, Container, MainImage, TextContainer } from "./styles";
 
-import mainImage from "assets/images/mainImage.svg";
+import mainImage from "assets/images/mainImage.png";
 import PhoneAnimation from "components/PhoneAnimation";
 
 const MainImageComponent = () => {

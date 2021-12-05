@@ -12,13 +12,10 @@ interface Props {
 }
 
 const CostItem = ({ item, type }: Props) => {
-  const backgroundColor =
-    type === "light" ? theme.mainWhite : theme.blueTransparent;
-
   return (
-    <Container style={{ backgroundColor }}>
-      <Label>{item.title}</Label>
-      <Price>від {item.cost} грн</Price>
+    <Container type={type}>
+      <Label className="cost-item_text">{item.title}</Label>
+      <Price className="cost-item_text">від {item.cost} грн</Price>
     </Container>
   );
 };
@@ -27,11 +24,26 @@ export default CostItem;
 
 const second_point = 580;
 
+interface StyledProps {
+  type: "light" | "blue";
+}
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 18px 30px;
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  background-color: ${({ type }: StyledProps) =>
+    type === "light" ? theme.mainWhite : theme.blueTransparent};
+  cursor: pointer;
+  &:hover {
+    background-color: ${theme.mainBlue};
+  }
+  &:hover .cost-item_text {
+    color: ${theme.mainWhite};
+  }
+
   @media only screen and (max-width: ${second_point}px) {
     flex-direction: column;
     align-items: center;
@@ -40,6 +52,7 @@ const Container = styled.div`
 
 const Label = styled(SemiBoldText)`
   font-size: 18px;
+
   @media only screen and (max-width: ${second_point}px) {
     margin-bottom: 10px;
     text-align: center;

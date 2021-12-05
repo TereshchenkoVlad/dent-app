@@ -41,6 +41,10 @@ const Input = styled.input`
   border-radius: 5px;
   background-color: ${theme.mainWhite};
   margin-top: 10px;
+  color: ${theme.black};
+  font-size: 15px;
+  font-family: Gilroy-Medium;
+  text-indent: 15px;
 
   @media only screen and (max-width: ${second_point}px) {
     width: 260px;

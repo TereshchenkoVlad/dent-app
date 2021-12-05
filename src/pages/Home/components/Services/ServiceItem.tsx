@@ -52,6 +52,12 @@ const ItemWrapper = styled.div`
   cursor: pointer;
   user-select: none;
   border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.3);
+  }
+
   &:hover .service_image {
     opacity: 1;
   }

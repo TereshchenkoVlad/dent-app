@@ -7,10 +7,10 @@ import DropMenu from "./DropMenu";
 
 import logoDark from "assets/images/logoDark.svg";
 import phoneIcon from "assets/images/icons/phone.svg";
-import viberIcon from "assets/images/icons/viber.svg";
+import viberIcon from "assets/images/icons/viber.png";
 import burgerIcon from "assets/images/icons/burger.svg";
 import locationIcon from "assets/images/icons/location.svg";
-import messengerIcon from "assets/images/icons/messenger.svg";
+import messengerIcon from "assets/images/icons/messenger.png";
 
 import {
   Link,
@@ -22,7 +22,6 @@ import {
   PreHeader,
   PhoneLink,
   ViberIcon,
-  Container,
   Navigation,
   BurgerIcon,
   LocationIcon,
@@ -48,7 +47,7 @@ const HeaderComponent = () => {
   const LINKS = t("header.links", { returnObjects: true }) as LinkType[];
 
   return (
-    <Container id="header">
+    <div id="header">
       <PreHeader>
         <LocationContainer>
           <LocationIcon src={locationIcon} alt="location" />
@@ -92,7 +91,7 @@ const HeaderComponent = () => {
           <BurgerIcon src={burgerIcon} alt="burger" onClick={toogleDrop()} />
         </BurgerContainer>
       </Header>
-    </Container>
+    </div>
   );
 };
 

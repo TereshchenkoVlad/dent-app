@@ -7,10 +7,15 @@ const second_point = 905;
 const third_point = 825;
 export const forth_point = 575;
 
-export const Container = styled.div``;
 export const Link = styled.a`
   text-decoration: none;
   color: ${theme.black};
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
 `;
 
 export const PreHeader = styled.div`
@@ -44,9 +49,6 @@ export const Header = styled.div`
 export const Social = styled.div`
   display: flex;
   align-items: center;
-  @media only screen and (max-width: ${third_point}px) {
-    display: none;
-  }
 `;
 
 export const Navigation = styled.div`
@@ -93,11 +95,19 @@ export const ViberIcon = styled.img`
   width: 40px;
   height: 40px;
   margin-right: 20px;
+  @media only screen and (max-width: ${forth_point}px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const MessengerIcon = styled.img`
   width: 40px;
   height: 40px;
+  @media only screen and (max-width: ${forth_point}px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const LocationIcon = styled.img`

@@ -24,6 +24,12 @@ const Container = styled.div`
   align-items: center;
   border-radius: 40px;
   border: 2px solid ${theme.mainWhite};
+  transition: all 0.3s ease;
+  user-select: none;
+
+  &:hover {
+    box-shadow: 4px 4px 8px 0px rgba(255, 255, 255, 0.5);
+  }
 
   @media only screen and (max-width: ${second_point}px) {
     width: 160px;

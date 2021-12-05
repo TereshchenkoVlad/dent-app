@@ -29,6 +29,7 @@ export const FirstBlock = styled(InitialBlock)`
   justify-content: space-between;
   @media only screen and (max-width: ${second_point}px) {
     flex-direction: column;
+    padding: 15px;
   }
 `;
 
@@ -52,6 +53,12 @@ export const ThirdBlock = styled(InitialBlock)`
 export const Link = styled.a`
   text-decoration: none;
   color: ${theme.black};
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
 `;
 
 export const LinkText = styled(MediumText)`
@@ -96,5 +103,23 @@ export const LocationText = styled(MediumText)`
   font-size: 16px;
   @media only screen and (max-width: ${first_point}px) {
     display: none;
+  }
+`;
+
+export const WeeksContainer = styled.div`
+  @media only screen and (max-width: ${second_point}px) {
+    margin: 15px 0;
+    display: flex;
+    & > div {
+      margin-right: 10px;
+    }
+  }
+`;
+
+export const Contacts = styled(MediumText)`
+  font-size: 16px;
+  @media only screen and (max-width: ${second_point}px) {
+    margin-bottom: 15px;
+    text-align: center;
   }
 `;

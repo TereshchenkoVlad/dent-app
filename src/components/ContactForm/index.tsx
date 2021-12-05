@@ -10,8 +10,10 @@ import Loader from "components/Loader";
 import CallBack from "components/CallBack";
 import ButtonComponent from "components/Button";
 
-import { Form, FormTitle, CloseWrapper } from "./styles";
+import { Form, FormTitle, CloseWrapper, CloseIcon } from "./styles";
 import { AppConfig } from "config/applicationConfig";
+
+import closeIcon from "assets/images/icons/close.png";
 
 const styles = {
   callBack: {
@@ -66,7 +68,9 @@ const ContactForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <CloseWrapper onClick={onClose}>CLOSE</CloseWrapper>
+      <CloseWrapper onClick={onClose}>
+        <CloseIcon src={closeIcon} alt="close" />
+      </CloseWrapper>
       <FormTitle>Залишіть свої контакти</FormTitle>
       <div style={styles.callBack}>
         <CallBack type="dark" />

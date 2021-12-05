@@ -16,6 +16,9 @@ export const Container = styled.div`
 export const MainImage = styled.img`
   width: 100%;
   height: auto;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 `;
 
 export const TextContainer = styled.div`

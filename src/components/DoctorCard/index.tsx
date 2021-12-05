@@ -39,7 +39,7 @@ const Container = styled.div`
   @media only screen and (max-width: ${first_point}px) {
     margin: 5px;
     width: 280px;
-    height: 320px;
+    height: 340px;
   }
 `;
 

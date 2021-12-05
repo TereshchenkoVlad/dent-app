@@ -29,7 +29,7 @@ export const Form = styled.form`
     top: 140px;
     left: calc(50vw - 160px);
     width: 320px;
-    height: 420px;
+    height: 450px;
   }
 `;
 
@@ -40,12 +40,20 @@ export const FormTitle = styled(Title)`
   @media only screen and (max-width: ${second_point}px) {
     font-size: 20px;
     margin-bottom: 20px;
-    margin-top: 30px;
   }
 `;
-
 export const CloseWrapper = styled.div`
   position: absolute;
   right: 20px;
   top: 20px;
+`;
+export const CloseIcon = styled.img`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform ease-in-out 0.3s;
+
+  &:hover {
+    transform: rotate(180deg) scale(1.3);
+  }
 `;

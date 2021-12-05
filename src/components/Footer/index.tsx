@@ -9,6 +9,7 @@ import {
   Logo,
   Link,
   Social,
+  Contacts,
   LinkText,
   Container,
   ViberIcon,
@@ -17,12 +18,13 @@ import {
   ThirdBlock,
   MessengerIcon,
   LocationText,
+  WeeksContainer,
 } from "./styles";
 import { MediumText } from "styles/text";
 
 import logoLight from "assets/images/logoLight.svg";
-import viberIcon from "assets/images/icons/viber.svg";
-import messengerIcon from "assets/images/icons/messenger.svg";
+import viberIcon from "assets/images/icons/viber.png";
+import messengerIcon from "assets/images/icons/messenger.png";
 
 const styles = {
   guarantee: { marginBottom: 15 },
@@ -35,15 +37,15 @@ const Footer = () => {
     <Container>
       <FirstBlock>
         <Logo src={logoLight} alt="logo light" />
-        <div>
+        <WeeksContainer>
           <Week label="Пн-Пт" text="9.00-19.00" />
           <Week label="Сб" text="9.00-16.00" />
-        </div>
+        </WeeksContainer>
 
-        <MediumText fs={16} style={{ visibility: "unset" }}>
+        <Contacts>
           (096) 020-52-00
           <br /> liashukdent@gmail.com
-        </MediumText>
+        </Contacts>
         <LocationText>
           Софіївська Борщагівка, ЖК «Софія», вул. Миру 30/18
         </LocationText>
@@ -59,11 +61,13 @@ const Footer = () => {
       </FirstBlock>
 
       <SecondBlock>
-        {LINKS.map((link) => (
-          <Link key={link.id} href={`#` + link.id}>
-            <LinkText>{link.name}</LinkText>
-          </Link>
-        ))}
+        {LINKS.map((link, index) => {
+          return (
+            <Link key={link.id} href={`#` + link.id}>
+              <LinkText>{link.name}</LinkText>
+            </Link>
+          );
+        })}
       </SecondBlock>
 
       <ThirdBlock>

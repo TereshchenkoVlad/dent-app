@@ -68,6 +68,7 @@ export const ButtonsContainer = styled.div`
   align-items: center;
   @media only screen and (max-width: ${first_point}px) {
     margin-top: 40px;
+    justify-content: center;
   }
   @media only screen and (max-width: ${third_point}px) {
     margin-top: 20px;
