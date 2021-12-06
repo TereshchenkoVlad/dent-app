@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { theme } from "styles/colors";
-import { MediumText, SemiBoldText } from "styles/text";
+import { Text, List, ListItem, LabelText } from "pages/InfoPage/styles";
 
 const Prosthesis = () => {
   return (
@@ -56,28 +55,4 @@ const Prosthesis = () => {
 
 export default Prosthesis;
 
-const Container = styled.div`
-  padding: 0 60px 50px 60px;
-`;
-
-const Text = styled(MediumText)`
-  color: ${theme.black};
-  font-size: 20px;
-  text-align: justify;
-`;
-
-const LabelText = styled(SemiBoldText)`
-  color: ${theme.black};
-  font-size: 24px;
-  text-align: justify;
-`;
-
-const List = styled.ul`
-  list-style-position: inside;
-  padding-left: 10px;
-`;
-const ListItem = styled.li`
-  color: ${theme.black};
-  font-size: 20px;
-  font-family: Gilroy-Medium;
-`;
+const Container = styled.div``;

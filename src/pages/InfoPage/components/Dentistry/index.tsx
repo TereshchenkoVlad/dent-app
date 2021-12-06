@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { theme } from "styles/colors";
-import { MediumText, SemiBoldText } from "styles/text";
+import { Text, BoldText } from "pages/InfoPage/styles";
 
 const Dentistry = () => {
   return (
@@ -63,18 +62,4 @@ const Dentistry = () => {
 
 export default Dentistry;
 
-const Container = styled.div`
-  padding: 0 60px 50px 60px;
-`;
-
-const Text = styled(MediumText)`
-  color: ${theme.black};
-  font-size: 20px;
-  text-align: justify;
-`;
-
-const BoldText = styled(SemiBoldText)`
-  color: ${theme.black};
-  font-size: 20px;
-  text-align: justify;
-`;
+const Container = styled.div``;

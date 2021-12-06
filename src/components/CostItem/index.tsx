@@ -53,6 +53,7 @@ const Container = styled.div`
 `;
 
 const Label = styled(SemiBoldText)`
+  flex: 1;
   font-size: 18px;
 
   @media only screen and (max-width: ${second_point}px) {

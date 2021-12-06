@@ -8,7 +8,7 @@ import Footer from "components/Footer";
 import { SERVICES } from "data/services";
 import Costs from "components/Costs";
 import BackHome from "components/BackHome";
-import { BackHomeWrapper } from "./styles";
+import { BackHomeWrapper, ChildrenContainer } from "./styles";
 
 const InfoPage = () => {
   const navigate = useNavigate();
@@ -28,7 +28,9 @@ const InfoPage = () => {
       <BackHomeWrapper>
         <BackHome onClick={toHome} />
       </BackHomeWrapper>
-      {service.children && service.children}
+      {service.children && (
+        <ChildrenContainer>{service.children}</ChildrenContainer>
+      )}
       {service.costs && <Costs costs={service.costs} />}
       <Footer />
     </React.Fragment>
