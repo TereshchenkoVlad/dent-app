@@ -37,7 +37,7 @@ const Title = styled(BigTitle)`
   margin-top: 53px;
   @media only screen and (max-width: ${first_point}px) {
     font-size: 20px;
-    margin-top: 0;
+    margin-top: 15px;
   }
 `;
 

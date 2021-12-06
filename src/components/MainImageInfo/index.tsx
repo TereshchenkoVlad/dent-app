@@ -7,6 +7,8 @@ import { Title, Container, MainImage, TextContainer } from "./styles";
 
 import PhoneAnimation from "components/PhoneAnimation";
 
+import defaultImage from "assets/images/services/prosthesis_big.png";
+
 interface Props {
   url: string;
   title: string;
@@ -17,7 +19,7 @@ const MainImageInfo = ({ url, title }: Props) => {
 
   return (
     <Container>
-      <MainImage src={url} alt="main image" />
+      <MainImage src={url ? url : defaultImage} alt="main image" />
       <TextContainer>
         <Title>{title}</Title>
       </TextContainer>
