@@ -54,12 +54,6 @@ export const SmallBold = styled.p`
   font-family: Gilroy-SemiBold;
 `;
 
-export const DescriptionText = styled.p`
-  color: ${theme.black};
-  font-size: 18px;
-  font-family: Gilroy-Medium;
-`;
-
 export const SemiBoldText = styled.p`
   color: ${({ color }: TextProps) => (color ? color : theme.black)};
   font-size: ${({ fs }: TextProps) => (fs ? fs : 20)}px;

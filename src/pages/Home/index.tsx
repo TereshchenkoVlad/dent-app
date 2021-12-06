@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { AppConfig } from "config/applicationConfig";
@@ -11,6 +11,7 @@ import Dentists from "./components/Dentists";
 import Services from "./components/Services";
 import AboutCompany from "./components/AboutCompany";
 import { CostType, EnumSeviceID, SERVICES } from "data/services";
+import { toTop } from "helpers/toTop";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -18,6 +19,10 @@ const Home = () => {
   const onServicePress = (id: EnumSeviceID) => {
     navigate(`/info/${id}`);
   };
+
+  useEffect(() => {
+    toTop();
+  }, []);
 
   const costs: CostType[] = SERVICES.map((service) => ({
     price: {

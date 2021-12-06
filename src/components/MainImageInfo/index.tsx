@@ -13,7 +13,7 @@ interface Props {
 }
 
 const MainImageInfo = ({ url, title }: Props) => {
-  const { visible, onOpen } = usePopUpContext();
+  const { formVisible, onOpenForm } = usePopUpContext();
 
   return (
     <Container>
@@ -21,10 +21,10 @@ const MainImageInfo = ({ url, title }: Props) => {
       <TextContainer>
         <Title>{title}</Title>
       </TextContainer>
-      <div onClick={onOpen}>
+      <div onClick={onOpenForm}>
         <PhoneAnimation />
       </div>
-      {visible && <ContactForm />}
+      {formVisible && <ContactForm />}
     </Container>
   );
 };

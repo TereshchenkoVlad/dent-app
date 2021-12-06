@@ -3,10 +3,15 @@ import styled from "styled-components";
 import { theme } from "styles/colors";
 import { NormalTitle } from "styles/text";
 
-const ButtonComponent = () => {
+interface Props {
+  title: string;
+  onClick: () => void;
+}
+
+const ButtonComponent = ({ title, onClick }: Props) => {
   return (
-    <Container>
-      <NormalTitle>Відправити</NormalTitle>
+    <Container onClick={onClick}>
+      <NormalTitle>{title}</NormalTitle>
     </Container>
   );
 };

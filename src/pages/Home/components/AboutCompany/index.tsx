@@ -20,11 +20,11 @@ import { usePopUpContext } from "context/popupContext";
 import teamImage from "assets/images/team.png";
 
 const AboutCompany = () => {
-  const { onOpen } = usePopUpContext();
+  const { onOpenForm } = usePopUpContext();
 
   const onSign = () => {
     document.getElementById("header")?.scrollIntoView();
-    onOpen();
+    onOpenForm();
   };
 
   return (

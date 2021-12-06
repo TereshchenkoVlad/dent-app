@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,7 @@ import { SERVICES } from "data/services";
 import Costs from "components/Costs";
 import BackHome from "components/BackHome";
 import { BackHomeWrapper, ChildrenContainer } from "./styles";
+import { toTop } from "helpers/toTop";
 
 const InfoPage = () => {
   const navigate = useNavigate();
@@ -18,6 +19,10 @@ const InfoPage = () => {
   const toHome = () => {
     navigate("/");
   };
+
+  useEffect(() => {
+    toTop();
+  }, []);
 
   if (!service) return null;
 

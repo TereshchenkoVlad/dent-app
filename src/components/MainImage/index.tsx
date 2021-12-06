@@ -9,7 +9,7 @@ import mainImage from "assets/images/mainImage.png";
 import PhoneAnimation from "components/PhoneAnimation";
 
 const MainImageComponent = () => {
-  const { visible, onOpen } = usePopUpContext();
+  const { formVisible, onOpenForm } = usePopUpContext();
 
   return (
     <Container>
@@ -18,10 +18,10 @@ const MainImageComponent = () => {
         <Title>Ваша красива посмішка - в наших руках</Title>
         <SubTitle>Сімейна стоматологія лікаря Ляшука</SubTitle>
       </TextContainer>
-      <div onClick={onOpen}>
+      <div onClick={onOpenForm}>
         <PhoneAnimation />
       </div>
-      {visible && <ContactForm />}
+      {formVisible && <ContactForm />}
     </Container>
   );
 };

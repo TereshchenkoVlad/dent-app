@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "styles/colors";
-import { BigTitle, DescriptionText } from "styles/text";
+import { BigTitle, MediumText } from "styles/text";
 
 const ServiceDescription = () => {
   return (
     <Container>
-      <BigTitle style={{ marginTop: 53 }}>Послуги клініки</BigTitle>
+      <Title>Послуги клініки</Title>
       <Line />
-      <DescriptionText>
+      <Text>
         Наша стоматологічна клініка пропонує всі види лікування для дорослих та
         дітей
-      </DescriptionText>
+      </Text>
     </Container>
   );
 };
@@ -28,8 +28,24 @@ const Container = styled.div`
 
   @media only screen and (max-width: ${first_point}px) {
     width: 280px;
-    height: 240px;
+    height: 140px;
     margin: 15px;
+  }
+`;
+
+const Title = styled(BigTitle)`
+  margin-top: 53px;
+  @media only screen and (max-width: ${first_point}px) {
+    font-size: 20px;
+    margin-top: 0;
+  }
+`;
+
+const Text = styled(MediumText)`
+  color: ${theme.black};
+  font-size: 18px;
+  @media only screen and (max-width: ${first_point}px) {
+    font-size: 16px;
   }
 `;
 

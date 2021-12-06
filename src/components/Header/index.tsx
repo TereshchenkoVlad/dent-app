@@ -50,6 +50,7 @@ const HeaderComponent = () => {
 
   const toHome = () => {
     navigate("/");
+    setDrop(false);
   };
 
   return (

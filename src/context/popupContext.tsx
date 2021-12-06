@@ -1,27 +1,46 @@
 import React, { useContext, useState } from "react";
 
 interface PopUpContextType {
-  visible: boolean;
-  onOpen: () => void;
-  onClose: () => void;
+  formVisible: boolean;
+  popupVisible: boolean;
+  onOpenForm: () => void;
+  onCloseForm: () => void;
+  onOpenPopup: () => void;
+  onClosePopup: () => void;
 }
 
 const PopUpContext = React.createContext<PopUpContextType>({
-  visible: false,
-  onOpen: () => undefined,
-  onClose: () => undefined,
+  formVisible: false,
+  popupVisible: false,
+  onOpenForm: () => undefined,
+  onCloseForm: () => undefined,
+  onOpenPopup: () => undefined,
+  onClosePopup: () => undefined,
 });
 
 export const PopUpContextProvider = ({
   children,
 }: React.PropsWithChildren<{}>) => {
-  const [visible, setVisible] = useState(false);
+  const [formVisible, setFormVisible] = useState(false);
+  const [popupVisible, setPopupVisible] = useState(false);
 
-  const onOpen = () => setVisible(true);
-  const onClose = () => setVisible(false);
+  const onOpenForm = () => setFormVisible(true);
+  const onCloseForm = () => setFormVisible(false);
+
+  const onOpenPopup = () => setPopupVisible(true);
+  const onClosePopup = () => setPopupVisible(false);
 
   return (
-    <PopUpContext.Provider value={{ visible, onOpen, onClose }}>
+    <PopUpContext.Provider
+      value={{
+        formVisible,
+        popupVisible,
+        onOpenPopup,
+        onClosePopup,
+        onOpenForm,
+        onCloseForm,
+      }}
+    >
       {children}
     </PopUpContext.Provider>
   );
