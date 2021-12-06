@@ -1,5 +1,6 @@
 import React from "react";
 import { t } from "i18next";
+import { useNavigate } from "react-router-dom";
 
 import { LinkType } from "config/i18n";
 
@@ -31,12 +32,18 @@ const styles = {
 };
 
 const Footer = () => {
+  let navigate = useNavigate();
+
   const LINKS = t("header.links", { returnObjects: true }) as LinkType[];
+
+  const toHome = () => {
+    navigate("/");
+  };
 
   return (
     <Container>
       <FirstBlock>
-        <Logo src={logoLight} alt="logo light" />
+        <Logo src={logoLight} alt="logo light" onClick={toHome} />
         <WeeksContainer>
           <Week label="Пн-Пт" text="9.00-19.00" />
           <Week label="Сб" text="9.00-16.00" />
@@ -63,7 +70,7 @@ const Footer = () => {
       <SecondBlock>
         {LINKS.map((link, index) => {
           return (
-            <Link key={link.id} href={`#` + link.id}>
+            <Link key={link.id} href={`#` + link.id} onClick={toHome}>
               <LinkText>{link.name}</LinkText>
             </Link>
           );

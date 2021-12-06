@@ -1,12 +1,16 @@
 import React from "react";
 import CostItem from "components/CostItem";
-import { SERVICES } from "data/services";
+import { CostType } from "data/services";
 import styled from "styled-components";
 import { theme } from "styles/colors";
 
 import { BigTitle, MediumText } from "styles/text";
 
-const Costs = () => {
+interface Props {
+  costs: CostType[];
+}
+
+const Costs = ({ costs }: Props) => {
   return (
     <Container id="prices">
       <TitleContainer>
@@ -23,7 +27,7 @@ const Costs = () => {
       </DescriptionContainer>
 
       <div>
-        {SERVICES.map((item, index) => {
+        {costs.map((item, index) => {
           const type = index % 2 ? "light" : "blue";
           return <CostItem key={item.title} type={type} item={item} />;
         })}

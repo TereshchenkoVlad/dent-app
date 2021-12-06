@@ -1,35 +1,32 @@
-import { SERVICES } from "data/services";
+import { EnumSeviceID, SERVICES } from "data/services";
 import React from "react";
 import styled from "styled-components";
 import ServiceDescription from "./ServiceDescription";
 
 import ServiceItem from "./ServiceItem";
 
-const Services = () => {
+interface Props {
+  onServicePress: (id: EnumSeviceID) => void;
+}
+
+const Services = ({ onServicePress }: Props) => {
   return (
     <Container id="services">
-      {SERVICES.map((s, i) => {
+      {SERVICES.map((service, i) => {
         if (i === 0) {
           return (
             <React.Fragment key={i.toString()}>
               <ServiceDescription />
-              <ServiceItem
-                title={s.title}
-                iconURL={s.iconURL}
-                imageURL={s.imageURL}
-                description={s.description}
-              />
+              <ServiceItem service={service} onPress={onServicePress} />
             </React.Fragment>
           );
         }
 
         return (
           <ServiceItem
+            service={service}
             key={i.toString()}
-            title={s.title}
-            iconURL={s.iconURL}
-            imageURL={s.imageURL}
-            description={s.description}
+            onPress={onServicePress}
           />
         );
       })}

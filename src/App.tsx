@@ -1,14 +1,9 @@
 import React from "react";
 
-import Home from "pages/Home";
-import { PopUpContextProvider } from "context/popupContext";
+import AppStack from "routes/AppStack";
 
 function App() {
-  return (
-    <PopUpContextProvider>
-      <Home />
-    </PopUpContextProvider>
-  );
+  return <AppStack />;
 }
 
 export default App;

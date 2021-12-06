@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { t } from "i18next";
+import { useNavigate } from "react-router-dom";
 
 import { LinkType } from "config/i18n";
 
@@ -40,11 +41,16 @@ const styles = {
 };
 
 const HeaderComponent = () => {
+  let navigate = useNavigate();
   const [drop, setDrop] = useState(false);
 
   const toogleDrop = () => () => setDrop(!drop);
 
   const LINKS = t("header.links", { returnObjects: true }) as LinkType[];
+
+  const toHome = () => {
+    navigate("/");
+  };
 
   return (
     <div id="header">
@@ -63,13 +69,13 @@ const HeaderComponent = () => {
 
       <Header>
         <Navigation>
-          <LogoIcon src={logoDark} alt="logo" />
+          <LogoIcon src={logoDark} alt="logo" onClick={toHome} />
           <WebLinks>
             {LINKS.map((link, index) => {
               const style =
                 LINKS.length - 1 === index ? {} : styles.acitionText;
               return (
-                <Link href={`#` + link.id} key={link.id}>
+                <Link href={`#` + link.id} key={link.id} onClick={toHome}>
                   <MediumText color={theme.black} fs={16} {...{ style }}>
                     {link.name}
                   </MediumText>
@@ -87,7 +93,7 @@ const HeaderComponent = () => {
           </Link>
         </Social>
         <BurgerContainer>
-          {drop && <DropMenu />}
+          {drop && <DropMenu links={LINKS} onLinkPress={toHome} />}
           <BurgerIcon src={burgerIcon} alt="burger" onClick={toogleDrop()} />
         </BurgerContainer>
       </Header>

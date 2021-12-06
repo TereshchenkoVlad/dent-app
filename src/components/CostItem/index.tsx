@@ -4,18 +4,21 @@ import styled from "styled-components";
 import { theme } from "styles/colors";
 import { SemiBoldText, MediumText } from "styles/text";
 
-import { SeviceType } from "data/services";
+import { CostType } from "data/services";
 
 interface Props {
-  item: SeviceType;
+  item: CostType;
   type: "light" | "blue";
 }
 
 const CostItem = ({ item, type }: Props) => {
+  const price = item.price.to
+    ? `${item.price.from} - ${item.price.to}`
+    : item.price.from;
   return (
     <Container type={type}>
       <Label className="cost-item_text">{item.title}</Label>
-      <Price className="cost-item_text">від {item.cost} грн</Price>
+      <Price className="cost-item_text">від {price} грн</Price>
     </Container>
   );
 };
@@ -36,7 +39,6 @@ const Container = styled.div`
   transition: all 0.3s ease-in-out;
   background-color: ${({ type }: StyledProps) =>
     type === "light" ? theme.mainWhite : theme.blueTransparent};
-  cursor: pointer;
   &:hover {
     background-color: ${theme.mainBlue};
   }

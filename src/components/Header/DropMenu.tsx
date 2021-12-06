@@ -1,5 +1,4 @@
 import React from "react";
-import { t } from "i18next";
 import styled from "styled-components";
 
 import { LinkType } from "config/i18n";
@@ -14,15 +13,18 @@ const styles = {
   },
 };
 
-const DropMenu = () => {
-  const LINKS = t("header.links", { returnObjects: true }) as LinkType[];
+interface Props {
+  links: LinkType[];
+  onLinkPress: () => void;
+}
 
+const DropMenu = ({ links, onLinkPress }: Props) => {
   return (
     <Container>
-      {LINKS.map((link, index) => {
-        const style = LINKS.length - 1 === index ? {} : styles.item;
+      {links.map((link, index) => {
+        const style = links.length - 1 === index ? {} : styles.item;
         return (
-          <Link href={`#` + link.id} key={link.id}>
+          <Link href={`#` + link.id} key={link.id} onClick={onLinkPress}>
             <MediumText {...{ style }}>{link.name}</MediumText>
           </Link>
         );

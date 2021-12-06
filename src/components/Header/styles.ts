@@ -81,6 +81,12 @@ export const LogoIcon = styled.img`
   width: 162px;
   height: 46px;
   margin-right: 153px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.6;
+  }
 
   @media only screen and (max-width: ${first_point}px) {
     margin-right: 50px;

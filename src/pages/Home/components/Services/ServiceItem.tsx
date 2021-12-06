@@ -3,6 +3,7 @@ import React from "react";
 import { NormalTitle, RegularType2 } from "styles/text";
 import { theme } from "styles/colors";
 import styled from "styled-components";
+import { EnumSeviceID, SeviceType } from "data/services";
 
 const styles = {
   title: {
@@ -11,28 +12,28 @@ const styles = {
 };
 
 interface Props {
-  title: string;
-  iconURL: string;
-  imageURL: string;
-  description: string;
+  service: SeviceType;
+  onPress: (id: EnumSeviceID) => void;
 }
 
-const ServiceItem = ({ title, iconURL, imageURL, description }: Props) => {
+const ServiceItem = ({ service, onPress }: Props) => {
   return (
-    <ItemWrapper>
+    <ItemWrapper onClick={() => onPress(service.id)}>
       <Filter className="service_image" />
-      <ItemImage className="service_image" src={imageURL} alt="main" />
+      <ItemImage className="service_image" src={service.imageURL} alt="main" />
 
       <Item>
-        <Icon className="service_icon" src={iconURL} alt="icon" />
+        <Icon className="service_icon" src={service.iconURL} alt="icon" />
         <NormalTitle
           className="service_text"
           style={styles.title}
           color={theme.black}
         >
-          {title}
+          {service.title}
         </NormalTitle>
-        <RegularType2 className="service_text">{description}</RegularType2>
+        <RegularType2 className="service_text">
+          {service.description}
+        </RegularType2>
       </Item>
     </ItemWrapper>
   );

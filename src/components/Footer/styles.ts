@@ -81,6 +81,12 @@ export const LinkText = styled(MediumText)`
 export const Logo = styled.img`
   width: 162px;
   height: 46px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 export const Social = styled.div`
