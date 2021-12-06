@@ -7,13 +7,16 @@ import App from "./App";
 import i18n from "config/i18n";
 import reportWebVitals from "./reportWebVitals";
 import { PopUpContextProvider } from "context/popupContext";
+import { CounterContextProvider } from "context/counterContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <PopUpContextProvider>
-      <I18nextProvider i18n={i18n}>
-        <App />
-      </I18nextProvider>
+      <CounterContextProvider>
+        <I18nextProvider i18n={i18n}>
+          <App />
+        </I18nextProvider>
+      </CounterContextProvider>
     </PopUpContextProvider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 
 import { FormSchema } from "helpers/validations";
 import { usePopUpContext } from "context/popupContext";
+import { useCounterContext } from "context/counterContext";
 
 import Input from "components/Input";
 import Loader from "components/Loader";
@@ -30,6 +31,7 @@ const styles = {
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const { onCloseForm, onOpenPopup } = usePopUpContext();
+  const { counter, addCount } = useCounterContext();
 
   const formik = useFormik({
     validationSchema: FormSchema,
@@ -38,6 +40,13 @@ const ContactForm = () => {
       phone: "",
     },
     onSubmit: ({ name, phone }) => {
+      if (counter >= 2) {
+        formik.setErrors({
+          name: "Доступно лише 2 запита на день",
+          phone: "Доступно лише 2 запита на день",
+        });
+        return;
+      }
       setLoading(true);
       // const templateParams = {
       //   name,
@@ -66,6 +75,7 @@ const ContactForm = () => {
 
       // DEV
       setTimeout(() => {
+        addCount();
         setLoading(false);
         onOpenPopup();
         onCloseForm();
