@@ -44,6 +44,7 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
+  width: 100%;
   flex: 1;
 `;
 
