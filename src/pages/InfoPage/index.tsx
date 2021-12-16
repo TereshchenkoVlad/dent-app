@@ -42,7 +42,6 @@ const InfoPage = () => {
           name="description"
           content={service.description}
         />
-        <meta id="og-image" property="og:image" content={service.imageURL} />
       </MetaTags>
       <Header />
       <MainImageInfo url={service.bigImageURL} title={service.title} />
