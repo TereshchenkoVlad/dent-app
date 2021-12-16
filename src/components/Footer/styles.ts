@@ -61,6 +61,15 @@ export const Link = styled.a`
   }
 `;
 
+export const TextLink = styled.a`
+  color: ${theme.mainWhite};
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+`;
+
 export const LinkText = styled(MediumText)`
   margin-right: 80px;
   font-size: 16px;

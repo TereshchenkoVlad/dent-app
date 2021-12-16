@@ -10,6 +10,7 @@ import {
   Logo,
   Link,
   Social,
+  TextLink,
   Contacts,
   LinkText,
   Container,
@@ -80,10 +81,24 @@ const Footer = () => {
       <ThirdBlock>
         <MediumText fs={16}>2021 Стоматологія лікаря Ляшука</MediumText>
         <div>
-          <MediumText style={styles.guarantee} fs={16}>
-            Гарантійні умови
-          </MediumText>
-          <MediumText fs={16}>Публічний договір ФОП Ляшук</MediumText>
+          <TextLink
+            href={`${process.env.PUBLIC_URL}/warranty_conditions.pdf`}
+            download="warranty_conditions.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MediumText style={styles.guarantee} fs={16}>
+              Гарантійні умови
+            </MediumText>
+          </TextLink>
+          <TextLink
+            href={`${process.env.PUBLIC_URL}/public_contract.pdf`}
+            download="public_contract.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MediumText fs={16}>Публічний договір ФОП Ляшук</MediumText>
+          </TextLink>
         </div>
       </ThirdBlock>
     </Container>

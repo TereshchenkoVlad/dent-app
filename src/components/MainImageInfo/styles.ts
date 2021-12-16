@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { theme } from "styles/colors";
-import { SemiBoldText } from "styles/text";
 
 const first_point = 950;
 const second_point = 760;
@@ -35,7 +34,8 @@ export const TextContainer = styled.div`
   }
 `;
 
-export const Title = styled(SemiBoldText)`
+export const Title = styled.h1`
+  font-family: Gilroy-SemiBold;
   font-size: 64px;
   color: ${theme.mainWhite};
   @media only screen and (max-width: ${first_point}px) {

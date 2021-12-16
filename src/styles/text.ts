@@ -14,7 +14,7 @@ export const LargeTitle = styled.p`
   font-family: Gilroy-Medium;
 `;
 
-export const BigTitle = styled.p`
+export const BigTitle = styled.h4`
   color: ${theme.black};
   font-size: 28px;
   font-family: Gilroy-SemiBold;

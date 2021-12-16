@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { LargeTitle, MediumText } from "styles/text";
+import { theme } from "styles/colors";
 
 const first_point = 1215;
 const second_point = 950;
@@ -50,7 +50,10 @@ export const TextContainer = styled.div`
   }
 `;
 
-export const Title = styled(LargeTitle)`
+export const Title = styled.h2`
+  font-size: 52px;
+  color: ${theme.mainWhite};
+  font-family: Gilroy-Medium;
   @media only screen and (max-width: ${first_point}px) {
     font-size: 35px;
   }
@@ -65,9 +68,11 @@ export const Title = styled(LargeTitle)`
   }
 `;
 
-export const SubTitle = styled(MediumText)`
+export const SubTitle = styled.h1`
   font-size: 20px;
   margin-top: 2vw;
+  font-family: Gilroy-Medium;
+  color: ${theme.mainWhite};
   @media only screen and (max-width: ${first_point}px) {
     font-size: 18px;
   }

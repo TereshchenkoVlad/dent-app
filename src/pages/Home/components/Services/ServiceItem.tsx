@@ -1,15 +1,9 @@
 import React from "react";
 
-import { NormalTitle, RegularType2 } from "styles/text";
+import { RegularType2 } from "styles/text";
 import { theme } from "styles/colors";
 import styled from "styled-components";
 import { EnumSeviceID, SeviceType } from "data/services";
-
-const styles = {
-  title: {
-    marginBottom: 10,
-  },
-};
 
 interface Props {
   service: SeviceType;
@@ -24,13 +18,7 @@ const ServiceItem = ({ service, onPress }: Props) => {
 
       <Item>
         <Icon className="service_icon" src={service.iconURL} alt="icon" />
-        <NormalTitle
-          className="service_text"
-          style={styles.title}
-          color={theme.black}
-        >
-          {service.title}
-        </NormalTitle>
+        <Title className="service_text">{service.title}</Title>
         <RegularType2 className="service_text">
           {service.description}
         </RegularType2>
@@ -42,6 +30,13 @@ const ServiceItem = ({ service, onPress }: Props) => {
 export default ServiceItem;
 
 const first_point = 500;
+
+const Title = styled.h3`
+  margin-bottom: 10px;
+  color: ${theme.black};
+  font-size: 18px;
+  font-family: Gilroy-SemiBold;
+`;
 
 const ItemWrapper = styled.div`
   width: 315px;
