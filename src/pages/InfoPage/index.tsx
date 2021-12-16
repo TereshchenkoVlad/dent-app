@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "components/Header";
 import MainImageInfo from "components/MainImageInfo";
 import Footer from "components/Footer";
-import { SERVICES } from "data/services";
+import { EnumSeviceID, SERVICES } from "data/services";
 import Costs from "components/Costs";
 import BackHome from "components/BackHome";
 import { BackHomeWrapper, ChildrenContainer } from "./styles";
@@ -36,7 +36,12 @@ const InfoPage = () => {
       {service.children && (
         <ChildrenContainer>{service.children}</ChildrenContainer>
       )}
-      {service.costs && <Costs costs={service.costs} />}
+      {service.costs && (
+        <Costs
+          hideText={service.id === EnumSeviceID.orthodontics}
+          costs={service.costs}
+        />
+      )}
       <Footer />
     </React.Fragment>
   );

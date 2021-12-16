@@ -76,8 +76,13 @@ export const LabelText = styled(SemiBoldText)`
 `;
 
 export const List = styled.ul`
-  list-style-position: inside;
-  padding-left: 10px;
+  margin-left: 35px;
+  @media only screen and (max-width: ${first_point}px) {
+    margin-left: 20px;
+  }
+  @media only screen and (max-width: ${second_point}px) {
+    margin-left: 10px;
+  }
 `;
 
 export const ListItem = styled.li`

@@ -8,9 +8,10 @@ import { BigTitle, MediumText } from "styles/text";
 
 interface Props {
   costs: CostType[];
+  hideText?: boolean;
 }
 
-const Costs = ({ costs }: Props) => {
+const Costs = ({ costs, hideText }: Props) => {
   return (
     <Container id="prices">
       <TitleContainer>
@@ -21,8 +22,10 @@ const Costs = ({ costs }: Props) => {
         <MediumText fs={18} color={theme.black}>
           *Точну суму лікування можна визначити лише після попереднього огляду.
           На вартість впливає велика кількість факторів: матеріали та
-          технології; занедбаність хвороби, розмір запалень; необхідність
-          застосування анастезії
+          технології; занедбаність
+          {hideText
+            ? " хвороби."
+            : " хвороби, розмір запалення; необхідність застосування анестезії."}
         </MediumText>
       </DescriptionContainer>
 
