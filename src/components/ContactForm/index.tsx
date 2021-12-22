@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
-// import * as emailjs from "emailjs-com";
+import * as emailjs from "emailjs-com";
 
 import { FormSchema } from "helpers/validations";
+import { AppConfig } from "config/applicationConfig";
 import { usePopUpContext } from "context/popupContext";
 import { useCounterContext } from "context/counterContext";
 
@@ -12,7 +13,6 @@ import CallBack from "components/CallBack";
 import ButtonComponent from "components/Button";
 
 import { Form, FormTitle, CloseWrapper, CloseIcon } from "./styles";
-// import { AppConfig } from "config/applicationConfig";
 
 import closeIcon from "assets/images/icons/close.png";
 
@@ -40,6 +40,7 @@ const ContactForm = () => {
       phone: "",
     },
     onSubmit: ({ name, phone }) => {
+      // Local cheker
       if (counter >= 2) {
         formik.setErrors({
           name: "Доступно лише 2 запита на день",
@@ -47,39 +48,31 @@ const ContactForm = () => {
         });
         return;
       }
-      setLoading(true);
-      // const templateParams = {
-      //   name,
-      //   phone,
-      // };
-      // emailjs
-      //   .send(
-      //     AppConfig.emailjs.serviceID,
-      //     AppConfig.emailjs.templateID,
-      //     templateParams,
-      //     AppConfig.emailjs.userID
-      //   )
-      //   .then((res) => {
-      //     console.log("emailjs: Success ", res.status, res.text);
-      //     onOpenPopup();
-      //     onCloseForm();
-      //   })
-      //   .catch((e) => {
-      //     console.log("emailjs: Error ", e);
-      //     const error = e.text ? e.text.slice(0, 50) : "Something went wrong";
-      //     formik.setErrors({ name: error, phone: error });
-      //   })
-      //   .finally(() => {
-      //     setLoading(false);
-      //   });
 
-      // DEV
-      setTimeout(() => {
-        addCount();
-        setLoading(false);
-        onOpenPopup();
-        onCloseForm();
-      }, 1500);
+      setLoading(true);
+      const templateParams = {
+        name,
+        phone,
+      };
+      emailjs
+        .send(
+          AppConfig.emailjs.serviceID,
+          AppConfig.emailjs.templateID,
+          templateParams,
+          AppConfig.emailjs.userID
+        )
+        .then((res) => {
+          addCount();
+          onOpenPopup();
+          onCloseForm();
+        })
+        .catch((e) => {
+          const error = e.text ? e.text.slice(0, 50) : "Something went wrong";
+          formik.setErrors({ name: error, phone: error });
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     },
   });
   const { values, errors, handleChange, handleBlur, handleSubmit } = formik;

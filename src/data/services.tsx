@@ -101,10 +101,10 @@ export const SERVICES: SeviceType[] = [
     bigImageURL: imgBig1,
     children: <Dentistry />,
     costs: [
-      { title: "Консультація лікаря-пародонтолога", price: { from: 200 } },
+      { title: "Консультація лікаря-терапевта", price: { from: 200 } },
       {
-        title: "Прицільний рентгенівський знімок (радіовізіографія)",
-        price: { from: 2100 },
+        title: "Прицільний рентгенівський знімок",
+        price: { from: 100 },
       },
       { title: "Анестезія ін’єкційна", price: { from: 200 } },
       { title: "Накладання рабердаму", price: { from: 100 } },
@@ -187,7 +187,7 @@ export const SERVICES: SeviceType[] = [
     id: EnumSeviceID.orthodontics,
     title: "Ортодонтія",
     description:
-      "Зняття відбитків, виготовлення діагностичних гіпсових моделей, пластинковий апарат з гвинтом, фіксація металевої брекет-системи.",
+      "Зняття відбитків, виготовлення діагностичних гіпсових моделей, пластинковий апарат з гвинтом, фіксація брекет-системи.",
     iconURL: icon3,
     imageURL: img3,
     cost: 4600,
@@ -234,7 +234,7 @@ export const SERVICES: SeviceType[] = [
     id: EnumSeviceID.hygiene_bleaching,
     title: "Гігієна та відбілювання",
     description:
-      "Професійна гігієна порожнини рота, комплексна (скейлінг, Air- flow), пародонтологічна чистка зубів, фото відбілювання зубів та ін.",
+      "Професійна гігієна порожнини рота (скейлінг, Air- flow), пародонтологічна чистка зубів, фото відбілювання зубів та ін.",
     iconURL: icon4,
     imageURL: img4,
     cost: 1200,
@@ -309,7 +309,7 @@ export const SERVICES: SeviceType[] = [
       { title: "Герметизація фісур (один зуб)", price: { from: 450 } },
       {
         title: "Лікування карієсу молочного зуба",
-        price: { from: 600, to: 700 },
+        price: { from: 700 },
       },
       {
         title:
@@ -354,7 +354,7 @@ export const SERVICES: SeviceType[] = [
   // surgery
   {
     id: EnumSeviceID.surgery,
-    title: "Хірургія",
+    title: "Хірургічна стоматологія",
     description:
       "Анестезія ін’єкційна, видалення зубів мудрості, розкриття періостального абсцесу та постановка дренажу, кюретаж лунки та ін.",
     iconURL: icon8,
@@ -396,15 +396,16 @@ export const SERVICES: SeviceType[] = [
     children: <Aesthetic />,
     costs: [
       {
-        title: "Консультація лікаря-ортопеда-стоматолога",
+        title: "Консультація лікаря-стоматолога",
         price: { from: 200 },
       },
 
       {
         title: "Естетична реставрація фронтальних зубів",
-        price: { from: 200 },
+        price: { from: 1500, to: 1800 },
       },
-      { title: "Вінір керамічний", price: { from: 800, to: 1200 } },
+      { title: "Вінір керамічний", price: { from: 7500 } },
+      { title: "Вкладка керамічна", price: { from: 4500 } },
     ],
   },
   // treatment_under_microscope
