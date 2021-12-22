@@ -86,7 +86,7 @@ const HeaderComponent = () => {
           </WebLinks>
         </Navigation>
         <Social>
-          <Link href="viber://chat?number=380960205200">
+          <Link href="viber://add?number=380960205200">
             <ViberIcon src={viberIcon} alt="viber" />
           </Link>
           <Link href="https://www.facebook.com/liashuk.clinic/" target="_blank">
