@@ -1,8 +1,9 @@
-import PopUp from "components/PopUp";
-import { usePopUpContext } from "context/popupContext";
 import React from "react";
 
 import AppStack from "routes/AppStack";
+import { usePopUpContext } from "context/popupContext";
+
+import PopUp from "components/PopUp";
 
 function App() {
   const { popupVisible } = usePopUpContext();
